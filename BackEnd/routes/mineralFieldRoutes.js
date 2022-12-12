@@ -10,7 +10,7 @@ router.post('/', auth, multer, mineralController.createMineral)
 
 router.get('/', mineralController.getAllMineral)
 
-router.get('/family', mineralController.getFamilyMineral)
+router.get('/family/:OneFamily', mineralController.getFamilyMineral)
 
 
 module.exports = router

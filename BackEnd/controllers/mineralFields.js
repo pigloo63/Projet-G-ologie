@@ -1,3 +1,4 @@
+const res = require('express/lib/response')
 const mysqlconnection = require('../DB/mysql')
 const { default: mineralFieldModel } = require('../models/mineralFieldModel')
 
@@ -33,13 +34,14 @@ exports.getAllMineral = (req, res) => {
     )
 }
 
-exports.getFamilyMineral= (req, res) => {
+
+exports.getFamilyMineral = (req, res) => {
     mysqlconnection.query(
-        'SELECT * FROM mineralfield WHERE family = "Sulfures" ',
+        `SELECT * FROM mineralfield WHERE family = "${req.params.OneFamily}"`,
         (err, result) => {
             if(err){
                 res.json({err})
-            }else{
+            } else {
                 res.status(200).json({result})
             }
         }
@@ -47,4 +49,5 @@ exports.getFamilyMineral= (req, res) => {
 }
 
 
-
+        
+    

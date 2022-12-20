@@ -123,7 +123,7 @@ const Home = () => {
             <section className='border p-6 rounded-3xl mr-10'>
                 <article > 
                     <span>
-                        Se site aura pour objectifs de représenter et d'identifier la plupart des minéraux qu'il est ssceptible de rencontrer dans la nature.<br />
+                        Se site aura pour objectifs de représenter et d'identifier la plupart des minéraux qu'il est susceptible de rencontrer dans la nature.<br />
                         Chaque minéral aurra donc ca propre fiche afin que vous puissiez avoir toutes les informations nécessaires en un clin d'oeil. 
                     </span>
                     <div className='mt-5'>
@@ -166,7 +166,7 @@ const Home = () => {
                                     <span>
                                         La quantité de lumière absorbée détermine si un minéral est transparent, translucide ou opaque.
                                     </span>
-                                    <p onClick={displayModalOpacity} className='hover:font-bold'>Fermer</p>
+                                    <p onClick={displayModalOpacity} className='hover:font-bold cursor-pointer'>Fermer</p>
                                 </div>}
                             </li>
                             <li className='mb-1'>
@@ -175,11 +175,11 @@ const Home = () => {
                                         <span>
                                             La dureté d'un minéral est définie comme la résitance à l'abrasion ou à la rayure. On utilise pour ceci l'échelle de Mohs.
                                         </span>
-                                        <p onClick={displayModalDurete} className='hover:font-bold'>Fermer</p>
+                                        <p onClick={displayModalDurete} className='hover:font-bold cursor-pointer'>Fermer</p>
                                     </div>}
                             </li>
                             <li className='mb-1'>
-                                <button onClick={displayModalDensity} className='hover:font-bold cursor-pointer'>La Densité spécifique:</button>
+                                <button onClick={displayModalDensity} className='hover:font-bold cursor-pointer'>La Densité spécifique</button>
                                 {displayDensity && <div className='border p-4 absolute bg-gray-400 rounded-xl top-1/3 right-1/3'>
                                     <span>
                                         La masse volumique d'un minéral est calculée en divisant sont poid par son volume. Elle s'exprime en g/cm3.
@@ -210,7 +210,7 @@ const Home = () => {
                                 </div>}
                             </li>
                             <li className='mb-1'>
-                                <button onClick={displayModalSystem} className='hover:font-bold cursor-pointer'>Sytème Cristallin:</button>
+                                <button onClick={displayModalSystem} className='hover:font-bold cursor-pointer'>Sytème Cristallin</button>
                                 {displaySytem && <div className='border p-4 absolute bg-gray-400 rounded-xl top-1/3 right-1/4 w-1/2' >
                                     <span>
                                         La cristallographie décrit la forme et la smétrie des cristaux, leur structure interne et leur caractériqtiques chimiques et physiques associées.
@@ -221,7 +221,7 @@ const Home = () => {
                                 </div>}
                             </li>
                             <li>
-                                <button onClick={displayModalClassification} className='hover:font-bold cursor-pointer'>Classification:</button>
+                                <button onClick={displayModalClassification} className='hover:font-bold cursor-pointer'>Classification</button>
                                 {displayClassification && <div className='border p-4 absolute bg-gray-400 rounded-xl top-1/3 right-1/3' >
                                     <span>
                                         Se site classifie les minéraux en fonction de leur famille respective, tels que les éléments natifs,ou les sulfates.
@@ -236,26 +236,26 @@ const Home = () => {
             </section>
             <section className='border h-60 rounded-3xl p-4 w-80'>
                 <span>Familles de Minéraux</span>
-                    <ul className='list-decimal list-inside pt-1'>
-                        <Link to='/natifs'>
+                    <ul className='list-decimal list-inside mt-1 ml-5'>
+                        <Link to='/Natifs'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Elément Natifs</li> 
                         </Link>
-                        <Link to='/sulfures'>
+                        <Link to='/Sulfures'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Sulfures et sulfosels</li>
                         </Link>
-                        <Link to='/halogenures'>
+                        <Link to='/Halogenures'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Halogénures et oxydes</li>
                         </Link>
-                        <Link to='/carbonates'>
+                        <Link to='/Carbonates'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Carbonates et borates</li>
                         </Link>
-                        <Link to='/sulfates'>
+                        <Link to='/Sulfates'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Sulfates</li>                
                         </Link>
-                        <Link to='/phosphates'>
+                        <Link to='/Phosphates'>
                             <li className='hover:font-bold cursor-pointer mb-1'>Phosphates</li>
                         </Link>
-                        <Link to='/silicates'>
+                        <Link to='/Silicates'>
                             <li className='hover:font-bold cursor-pointer'>Silicates et composé Organiques</li>
                         </Link>
                     </ul>

@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from '../src/pages/home'
 import Header from './component/header'
-import Natifs from './pages/Natifs'
-import Sulfures from './pages/Sulfures'
-import Halogenures from './pages/Halogenures'
-import Carbonates from './pages/Carbonates'
-import Sulfates from './pages/Sulfates'
-import Phosphates from './pages/Phosphates'
-import Silicates from './pages/Silicates'
+import Natifs from './pages/Family/Natifs'
+import Sulfures from './pages/Family/Sulfures'
+import Halogenures from './pages/Family/Halogenures'
+import Carbonates from './pages/Family/Carbonates'
+import Sulfates from './pages/Family/Sulfates'
+import Phosphates from './pages/Family/Phosphates'
+import Silicates from './pages/Family/Silicates'
 
 
 
@@ -21,25 +21,25 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path='/natifs'>
+        <Route path='/Natifs'>
           <Natifs />
         </Route>
-        <Route path='/sulfures'>
+        <Route path='/Sulfures'>
           <Sulfures />
         </Route>
-        <Route path='/halogenures'>
+        <Route path='/Halogenures'>
           <Halogenures />
         </Route>
-        <Route path='/carbonates'>
+        <Route path='/Carbonates'>
           <Carbonates />
         </Route>
-        <Route path='/sulfates'>
+        <Route path='/Sulfates'>
           <Sulfates />
         </Route>
-        <Route path='/phosphates'>
+        <Route path='/Phosphates'>
           <Phosphates />
         </Route>
-        <Route path='/silicates'>
+        <Route path='/Silicates'>
           <Silicates />
         </Route>
       </Switch>

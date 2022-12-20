@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import '../css/Index.css'
 
 const Home = () => {
@@ -236,13 +237,27 @@ const Home = () => {
             <section className='border h-60 rounded-3xl p-4 w-80'>
                 <span>Familles de Minéraux</span>
                     <ul className='list-decimal list-inside pt-1'>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Elément Natifs</li>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Sulfures et sulfosels</li>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Halogénures et oxydes</li>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Carbonates et borates</li>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Sulfates</li>
-                        <li className='hover:font-bold cursor-pointer mb-1'>Phosphates</li>
-                        <li className='hover:font-bold cursor-pointer'>Silicates et composé Organiques</li>
+                        <Link to='/natifs'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Elément Natifs</li> 
+                        </Link>
+                        <Link to='/sulfures'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Sulfures et sulfosels</li>
+                        </Link>
+                        <Link to='/halogenures'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Halogénures et oxydes</li>
+                        </Link>
+                        <Link to='/carbonates'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Carbonates et borates</li>
+                        </Link>
+                        <Link to='/sulfates'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Sulfates</li>                
+                        </Link>
+                        <Link to='/phosphates'>
+                            <li className='hover:font-bold cursor-pointer mb-1'>Phosphates</li>
+                        </Link>
+                        <Link to='/silicates'>
+                            <li className='hover:font-bold cursor-pointer'>Silicates et composé Organiques</li>
+                        </Link>
                     </ul>
             </section>
             

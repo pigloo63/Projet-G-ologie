@@ -13,6 +13,8 @@ const Home = () => {
     const [displaySytem, setDisplaySystem] = useState(false)
     const [displayClassification, setDisplayClassification] = useState(false)
 
+    
+
     const displayModalColor = () => {
         if(displayClassification === true || displayDensity === true || displayEclat === true || displayDurete === true || displayHabitus === true || displayOpacity === true || displaySytem === true){
             setDisplayClassification(false)

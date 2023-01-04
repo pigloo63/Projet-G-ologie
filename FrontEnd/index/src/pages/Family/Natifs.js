@@ -2,14 +2,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ListOfMinerals from '../../component/MineralField/ListOfMinerals'
-import MineralField from '../../component/MineralField/MineralField'
 
 const Natifs = () => {
     //Appel Api pour récupérer les données des éléments Natifs
     const [data, setData] = useState([])
 
     const url = 'http://localhost:4000/api/mineral/Natifs'
-
 
     const fetchData = async () => {
         try{
@@ -39,9 +37,6 @@ const Natifs = () => {
                 <div className='border rounded-3xl p-4 w-40'>
                 <span className='mb-10'>Les minéraux:</span>
                     <ListOfMinerals data={data}/>
-                </div>
-                <div>
-                    <MineralField data={data}/>
                 </div>
             </div>
         </>

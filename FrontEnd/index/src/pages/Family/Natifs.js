@@ -40,9 +40,9 @@ const Natifs = () => {
                 <span className='mb-10'>Les minéraux:</span>
                     <ListOfMinerals data={data}/>
                 </div>
-                    <div>
-                        <MineralField data={data}/>
-                    </div>
+                <div>
+                    <MineralField data={data}/>
+                </div>
             </div>
         </>
     )

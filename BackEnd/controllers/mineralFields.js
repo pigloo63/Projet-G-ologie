@@ -8,7 +8,10 @@ exports.createMineral = (req,res) =>{
     const imgMineral = `${req.protocol}://${req.get('host')}/images/${req.files.imgMineral[0].filename}`
     const imgDiagram = `${req.protocol}://${req.get('host')}/images/${req.files.imgDiagram[0].filename}`
     
-    const mineralSave = new mineralFieldModel(req.body.family, req.body.name, req.body.description, req.body.chimicalFormula, req.body.crystalMesh, imgMineral, imgMic, imgDiagram)
+    const mineralSave = new mineralFieldModel(
+        req.body.family, req.body.name, req.body.description, req.body.chimicalFormula, 
+        req.body.crystalMesh, req.body.durete, req.body.color, req.body.eclat, req.body.opacity, req.body.habitus,
+        imgMineral, imgMic, imgDiagram)
     mysqlconnection.query(
         `INSERT INTO mineralfield SET ?`, mineralSave, (err, result) => {
             if(err){

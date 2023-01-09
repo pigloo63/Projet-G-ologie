@@ -10,10 +10,12 @@ exports.createMineral = (req,res) =>{
     
     const mineralSave = new mineralFieldModel(
         req.body.family, req.body.name, req.body.description, req.body.chimicalFormula, 
-        req.body.crystalMesh, req.body.durete, req.body.color, req.body.eclat, req.body.opacity, req.body.habitus,
+        req.body.crystalMesh, req.body.durete, req.body.color, req.body.eclat, req.body.opacity, req.body.density,
+        req.body.habitus,
         imgMineral, imgMic, imgDiagram)
+
     mysqlconnection.query(
-        `INSERT INTO mineralfield SET ?`, mineralSave, (err, result) => {
+        `INSERT INTO mineralproperty SET ?`, mineralSave, (err, result) => {
             if(err){
                 console.log('Erreur de la base de données')
                 res.json(err)
@@ -26,7 +28,7 @@ exports.createMineral = (req,res) =>{
 
 exports.getAllMineral = (req, res) => {
     mysqlconnection.query(
-        'SELECT * FROM mineralfield WHERE ?', ["1"],
+        'SELECT * FROM mineralproperty WHERE ?', ["1"],
         (err, result) => {
             if(err){
                 res.json({err})
@@ -40,7 +42,7 @@ exports.getAllMineral = (req, res) => {
 
 exports.getFamilyMineral = (req, res) => {
     mysqlconnection.query(
-        `SELECT * FROM mineralfield WHERE family = "${req.params.OneFamily}"`,
+        `SELECT * FROM mineralproperty WHERE family = "${req.params.OneFamily}"`,
         (err, result) => {
             if(err){
                 res.json({err})

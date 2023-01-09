@@ -5,4 +5,11 @@
 body{
     width: 1800px;
     margin:auto;
+    height: auto;
+}
+
+.positionMineralField{
+    position: fixed;
+    top: 140px;
+    left: 170px;
 }

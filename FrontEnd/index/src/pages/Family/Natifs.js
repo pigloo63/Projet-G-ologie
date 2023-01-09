@@ -5,7 +5,7 @@ import ListOfMinerals from '../../component/MineralField/ListOfMinerals'
 
 const Natifs = () => {
     //Appel Api pour récupérer les données des éléments Natifs
-    const [data, setData] = useState([])
+    const [dataNatifs, setDataNatifs] = useState([])
 
     const url = 'http://localhost:4000/api/mineral/Natifs'
 
@@ -19,7 +19,7 @@ const Natifs = () => {
             })
 
             const Result = await result.json()
-            setData(Result.result)
+            setDataNatifs(Result.result)
 
         }catch(error){
             console.log('Pas de réponse de l\'API')
@@ -36,7 +36,7 @@ const Natifs = () => {
             <div>
                 <div className='border rounded-3xl p-4 w-40'>
                 <span className='mb-10'>Les minéraux:</span>
-                    <ListOfMinerals data={data}/>
+                    <ListOfMinerals data={dataNatifs}/>
                 </div>
             </div>
         </>

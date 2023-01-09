@@ -15,14 +15,16 @@ const ListOfMinerals = ({data}) => {
     }
 
     return (
-        <div>
-            {data.map(mineral => (
-                <div key={mineral.id}>
-                    <ul className='ml-10 mt-2 list-disc'>
-                        <li className='cursor-pointer hover:font-bold' onClick={() => selectMineral(mineral)}>{mineral.name}</li>
-                    </ul>
-                </div>
-            ))}
+        <div className='flex'>
+            <div>
+                {data.map(mineral => (
+                    <div key={mineral.id}>
+                        <ul className='ml-10 mt-2 list-disc w-auto'>
+                            <li className='cursor-pointer hover:font-bold' onClick={() => selectMineral(mineral)}>{mineral.name}</li>
+                        </ul>
+                    </div>
+                ))}
+            </div>
             <div>
                 <MineralField elementMineral={element}/>
             </div>

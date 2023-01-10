@@ -2,14 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
     width: 1800px;
     margin:auto;
-    height: auto;
+    scroll-behavior: auto;
+    background-color: #dfe1e7;
 }
 
 .positionMineralField{
-    position: fixed;
-    top: 140px;
-    left: 170px;
+    position: absolute;
+    top: 240px;
+    left: 150px;
+}
+
+.image_presentation{
+    height: 200px;
+    width: 1500px;
+    margin: auto;
+    object-fit: cover;
+    
 }

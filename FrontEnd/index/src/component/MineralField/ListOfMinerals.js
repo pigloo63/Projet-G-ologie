@@ -16,7 +16,7 @@ const ListOfMinerals = ({data}) => {
 
     return (
         <div className='flex'>
-            <div>
+            <div >
                 {data.map(mineral => (
                     <div key={mineral.id}>
                         <ul className='ml-10 mt-2 list-disc w-auto'>

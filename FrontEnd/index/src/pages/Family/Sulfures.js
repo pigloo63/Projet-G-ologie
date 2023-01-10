@@ -31,10 +31,10 @@ const Sulfures = () => {
 
     return (
         <>
-            <Link to='/'> <span className='cursor-pointer hover:font-bold absolute top-0 right-20 mt-10'> Page d'accueil</span></Link>
+            <Link to='/'> <span className='cursor-pointer hover:font-bold absolute top-0 mt-10'> Page d'accueil</span></Link>
             <div>
-                <div className='border rounded-3xl p-4 w-40'>
-                <span className='mb-10'>Les minéraux:</span>
+                <div className='border rounded-3xl p-4 w-40 bg-white'>
+                    <span className='mb-10 font-bold'>Les minéraux:</span>
                     <ListOfMinerals data={dataSulfures}/>
                 </div>
             </div>

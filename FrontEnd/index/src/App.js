@@ -8,8 +8,8 @@ import Carbonates from './pages/Family/Carbonates'
 import Sulfates from './pages/Family/Sulfates'
 import Phosphates from './pages/Family/Phosphates'
 import Silicates from './pages/Family/Silicates'
-
-
+import AddMineral from './pages/addMineral'
+import AuthForm from './auth/AuthForm'
 
 
 function App() {
@@ -21,6 +21,9 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
+          <Route path='/auth'>
+              <AuthForm/>
+          </Route>
         <Route path='/Natifs'>
           <Natifs />
         </Route>
@@ -41,6 +44,9 @@ function App() {
         </Route>
         <Route path='/Silicates'>
           <Silicates />
+        </Route>
+        <Route path='/addMineral'>
+          <AddMineral />
         </Route>
       </Switch>
     </Router>

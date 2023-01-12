@@ -33,7 +33,7 @@ const MineralField = ({elementMineral}) => {
                             <span>{elementMineral.crystalMesh}</span>
                         </div>
                     </div>
-                    <div className='font-bold ml-[600px]'>
+                    <div className='font-bold ml-[400px]'>
                         <h2 className='font-bold mb-5'>Image du mineral:</h2>
                         <img src={elementMineral.imgMineral} alt="image du mineral" />
                     </div>

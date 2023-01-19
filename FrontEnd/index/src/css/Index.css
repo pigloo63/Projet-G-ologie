@@ -4,22 +4,14 @@
 
 
 body{
-    width: 1800px;
     margin:auto;
     scroll-behavior: auto;
     background-color: #dfe1e7;
 }
 
-.positionMineralField{
-    position: absolute;
-    top: 240px;
-    left: 150px;
-}
-
 .image_presentation{
-    height: 200px;
-    width: 1500px;
+    height: 400px;
+    width: 100%;
     margin: auto;
     object-fit: cover;
-    
 }

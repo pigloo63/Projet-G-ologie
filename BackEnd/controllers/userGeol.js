@@ -13,8 +13,8 @@ exports.signup = (req, res) => {
             mysqlconnection.query(
                 'INSERT INTO user SET ?', user, (err, result) => {
                     if(err){
-                        console.log(`Erreur de la connexion à la base de données`)
-                        res.json({error})
+                        res.json({err})
+                        console.log({err})
                     }else{
                         res.json({message:'utilisateur enregistré'})
                     }
@@ -30,17 +30,22 @@ exports.login = (req, res) => {
             'SELECT * FROM user WHERE identifiant = ?', identifiant, (err, result) => {
                 if(err){
                     res.status(401).json({message : 'Erreur de la base de donnée' })
+                    res.json({err})
                 }else{
-                    if(result == 0){
-                        res.status(404).json({message:`identifiant non valide`})
+                    //Si l'utilisateur n'est pas présent dans base de donnée
+                    if(result === 0){
+                        res.status(404).json({
+                            error:`identifiant non valide ou non existant dans la BDD`,
+                            result
+                        })
                     }else{
-                        console.log(result)
                         bcrypt
                             .compare(req.body.password, result[0].password)
                             .then((valid) => {
                                 if (!valid) {
                                     return res.status(401).json({
                                         message: 'Paire login/mot de passe incorrecte',
+                                        valid
                                     })
                                 }
                                 res.status(200).json({

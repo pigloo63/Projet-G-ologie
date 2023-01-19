@@ -1,84 +1,118 @@
-import React, { useRef, useState, useContext} from 'react';
-import AuthContext from '../context/authContext';
-import { useHistory } from 'react-router-dom';
+import React, { useRef, useState, useContext } from "react";
+import AuthContext from "../context/authContext";
 
-const AuthForm = () => {
+const AuthForm = ({ closeModal }) => {
+  const identifiantInputRef = useRef();
+  const pwdInputRef = useRef();
 
-    const identifiantInputRef = useRef()
-    const pwdInputRef = useRef()
+  const authContext = useContext(AuthContext);
 
-    const authContext = useContext(AuthContext)
+  // eslint-disable-next-line no-unused-vars
+  const [data, setData] = useState();
+  const [error, setError] = useState(false);
 
-    
-    const history = useHistory()
-    
-    // eslint-disable-next-line no-unused-vars
-    const [data, setData] = useState()
-    
-    const submitHandler = (e) => {
-        e.preventDefault()
+  //Fonction et useState permettant d'afficher lors d'une erreur de mot de passe la modale
+  // eslint-disable-next-line no-unused-vars
+  const [close, setClose] = useState(true);
+  console.log(close);
 
+  //Fonction pour envoyer les éléments au back
+  const submitHandler = (e) => {
+    e.preventDefault();
 
-        const enteredidentifiant = identifiantInputRef.current.value
-        const enteredPwd = pwdInputRef.current.value
+    const enteredidentifiant = identifiantInputRef.current.value;
+    const enteredPwd = pwdInputRef.current.value;
 
-        const url = 'http://localhost:4000/api/auth/login'
+    const url = "http://localhost:4000/api/auth/login";
 
-        const fetchlog = async () => {
-            try {
-                const result = await fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        identifiant: enteredidentifiant,
-                        password: enteredPwd
-                    }),
-                    headers:{
-                        'Content-Type' : 'application/json'
-                    }
-                })
+    const fetchlog = async () => {
+      try {
+        const result = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            identifiant: enteredidentifiant,
+            password: enteredPwd,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
-                const dataResult = await result.json()
+        const dataResult = await result.json();
+        console.log(dataResult);
 
-                if(result.ok){
-                    setData(dataResult.result)
-                    authContext.login(
-                        dataResult.token,
-                        dataResult.userId
-                    )
-                }
-
-                history.push('/')
-
-            } catch (error) {
-                console.log('Pas de réponse de l\'API')
-            }
+        //Si erreur du mot de passe alors affichage de la modale
+        if (dataResult.valid === false) {
+          setError(true);
+        } else {
+          setData(dataResult.result);
+          setClose(false);
+          authContext.login(dataResult.token, dataResult.userId);
         }
-        fetchlog()
-    }
 
-    return (
-        <div>
-            <section>
-                <form onSubmit={submitHandler}>
-                    <label htmlFor="identifiant">Votre identifiant</label>
-                    <input 
-                        type="text" 
-                        name='identifiant' 
-                        id='identifiant' 
-                        ref={identifiantInputRef}
-                        required/>
-                    <label htmlFor="password">Votre mot de passe</label>
-                    <input 
-                        type="password" 
-                        name='password' 
-                        id='password' 
-                        ref={pwdInputRef}
-                        required/>
-                    <button type={'submit'}> Se connecter</button>
-                </form>
-            </section>
-        </div>
-    )
-}
+        identifiantInputRef.current.value = "";
+        pwdInputRef.current.value = "";
 
-export default AuthForm
+        if (result.ok) {
+          closeModal();
+        }
+      } catch (error) {
+        console.log("Pas de réponse de l'API");
+      }
+    };
+    fetchlog();
+  };
+
+  return (
+    <div>
+      <div>
+        {close && (
+          <section className="fixed top-1/4 right-1/2 translate-x-1/2 border bg-slate-300 rounded-3xl m-auto p-10">
+            <p className="text-center">CONNECTEZ-VOUS</p>
+            <form
+              onSubmit={submitHandler}
+              className="flex flex-col mt-10 text-center"
+            >
+              <label htmlFor="identifiant" className="mb-5">
+                Votre identifiant
+              </label>
+              <input
+                className="mb-10"
+                type="text"
+                name="identifiant"
+                id="identifiant"
+                ref={identifiantInputRef}
+                required
+              />    
+              <label htmlFor="password" className="mb-5">
+                Mot de passe
+              </label>
+              <input
+                className="mb-10"
+                type="password"
+                name="password"
+                id="password"
+                ref={pwdInputRef}
+                required
+              />
+              {error && (
+                <div className="mb-5">
+                  <p>Le mot de passe et/ou l'identifiant sont incorecte</p>
+                </div>
+              )}
+              <button type={"submit"}>Se connecter</button>
+            </form>
+            <div className="mt-5">
+              <p>Nouvelle utilisateur ? Je crée mon compte</p>
+            </div>
+            <button onClick={closeModal} className="mt-10 ">
+              Fermer
+            </button>
+          </section>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default AuthForm;

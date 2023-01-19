@@ -1,14 +1,12 @@
-import React from 'react';
-import App from './App';
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import React from "react";
+import App from "./App";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import { AuthContextProvider } from './context/authContext'
+import { AuthContextProvider } from "./context/authContext";
 
-
-
-const container = document.getElementById('root')
-const root = createRoot(container)
+const container = document.getElementById("root");
+const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
@@ -19,4 +17,3 @@ root.render(
     </AuthContextProvider>
   </React.StrictMode>
 );
-

@@ -22,6 +22,7 @@ const CreateAccount = () => {
 
     const fetchSignUp = async () => {
       try {
+        //Vérification de la bonne validité du mpd
         if (enterredPwd !== enterredPwDVerify) {
           console.log("Mot de passe incorrecte");
           return;

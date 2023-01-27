@@ -1,184 +1,24 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../css/Index.css";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../css/Index.css'
 
 const Home = () => {
-  const [displayHabitus, setDisplayHabitus] = useState(false);
-  const [displayEclat, setDisplayEclat] = useState(false);
-  const [displayColor, setDisplayColor] = useState(false);
-  const [displayDurete, setDisplayDurete] = useState(false);
-  const [displayOpacity, setDisplayOpacity] = useState(false);
-  const [displayDensity, setDisplayDensity] = useState(false);
-  const [displaySytem, setDisplaySystem] = useState(false);
-  const [displayClassification, setDisplayClassification] = useState(false);
+  const [displayHabitus, setDisplayHabitus] = useState(false)
+  const [displayEclat, setDisplayEclat] = useState(false)
+  const [displayColor, setDisplayColor] = useState(false)
+  const [displayDurete, setDisplayDurete] = useState(false)
+  const [displayOpacity, setDisplayOpacity] = useState(false)
+  const [displayDensity, setDisplayDensity] = useState(false)
+  const [displaySystem, setDisplaySystem] = useState(false)
+  const [displayClassification, setDisplayClassification] = useState(false)
 
-  const displayModalColor = () => {
-    if (
-      displayClassification === true ||
-      displayDensity === true ||
-      displayEclat === true ||
-      displayDurete === true ||
-      displayHabitus === true ||
-      displayOpacity === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayHabitus(false);
-      setDisplayDensity(false);
-      setDisplayEclat(false);
-      setDisplayDurete(false);
-      setDisplaySystem(false);
-      setDisplayOpacity(false);
+  function displayModal(display, setDisplay) {
+    if (display === false) {
+      setDisplay(true)
+    } else {
+      setDisplay((open) => !open)
     }
-    setDisplayColor((displayColor) => !displayColor);
-  };
-
-  const displayModalHabitus = () => {
-    if (
-      displayClassification === true ||
-      displayDensity === true ||
-      displayEclat === true ||
-      displayDurete === true ||
-      displayColor === true ||
-      displayOpacity === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayDensity(false);
-      setDisplayEclat(false);
-      setDisplayDurete(false);
-      setDisplaySystem(false);
-      setDisplayOpacity(false);
-    }
-    setDisplayHabitus((displayHabitus) => !displayHabitus);
-  };
-
-  const displayModalEclat = () => {
-    if (
-      displayClassification === true ||
-      displayDensity === true ||
-      displayHabitus === true ||
-      displayDurete === true ||
-      displayColor === true ||
-      displayOpacity === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayDensity(false);
-      setDisplayHabitus(false);
-      setDisplayDurete(false);
-      setDisplaySystem(false);
-      setDisplayOpacity(false);
-    }
-    setDisplayEclat((displayEclat) => !displayEclat);
-  };
-
-  const displayModalDurete = () => {
-    if (
-      displayClassification === true ||
-      displayDensity === true ||
-      displayHabitus === true ||
-      displayEclat === true ||
-      displayColor === true ||
-      displayOpacity === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayDensity(false);
-      setDisplayHabitus(false);
-      setDisplayEclat(false);
-      setDisplaySystem(false);
-      setDisplayOpacity(false);
-    }
-    setDisplayDurete((displayDurete) => !displayDurete);
-  };
-
-  const displayModalOpacity = () => {
-    if (
-      displayClassification === true ||
-      displayDensity === true ||
-      displayHabitus === true ||
-      displayEclat === true ||
-      displayColor === true ||
-      displayDurete === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayDensity(false);
-      setDisplayHabitus(false);
-      setDisplayEclat(false);
-      setDisplaySystem(false);
-      setDisplayDurete(false);
-    }
-    setDisplayOpacity((displayOpacity) => !displayOpacity);
-  };
-
-  const displayModalDensity = () => {
-    if (
-      displayClassification === true ||
-      displayOpacity === true ||
-      displayHabitus === true ||
-      displayEclat === true ||
-      displayColor === true ||
-      displayDurete === true ||
-      displaySytem === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayOpacity(false);
-      setDisplayHabitus(false);
-      setDisplayEclat(false);
-      setDisplaySystem(false);
-      setDisplayDurete(false);
-    }
-    setDisplayDensity((displayDensity) => !displayDensity);
-  };
-
-  const displayModalSystem = () => {
-    if (
-      displayClassification === true ||
-      displayOpacity === true ||
-      displayHabitus === true ||
-      displayEclat === true ||
-      displayColor === true ||
-      displayDurete === true ||
-      displayDensity === true
-    ) {
-      setDisplayClassification(false);
-      setDisplayColor(false);
-      setDisplayOpacity(false);
-      setDisplayHabitus(false);
-      setDisplayEclat(false);
-      setDisplayDensity(false);
-      setDisplayDurete(false);
-    }
-    setDisplaySystem((displaySystem) => !displaySystem);
-  };
-
-  const displayModalClassification = () => {
-    if (
-      displaySytem === true ||
-      displayOpacity === true ||
-      displayHabitus === true ||
-      displayEclat === true ||
-      displayColor === true ||
-      displayDurete === true ||
-      displayDensity === true
-    ) {
-      setDisplaySystem(false);
-      setDisplayColor(false);
-      setDisplayOpacity(false);
-      setDisplayHabitus(false);
-      setDisplayEclat(false);
-      setDisplayDensity(false);
-      setDisplayDurete(false);
-    }
-    setDisplayClassification((displayClassification) => !displayClassification);
-  };
+  }
 
   return (
     <div className="ml-[200px]">
@@ -201,7 +41,7 @@ const Home = () => {
               <ul className="list-disc list-inside mt-5 ml-6">
                 <li className="mb-3">
                   <button
-                    onClick={displayModalColor}
+                    onClick={() => displayModal(displayColor, setDisplayColor)}
                     className="cursor-pointer hover:font-bold"
                     id="displayColor"
                   >
@@ -215,8 +55,11 @@ const Home = () => {
                         varier en fonction de l'impureté d'un minéral.
                       </span>
                       <p
-                        onClick={displayModalColor}
+                        onClick={() =>
+                          displayModal(displayColor, setDisplayColor)
+                        }
                         className="cursor-pointer hover:font-bold mt-2"
+                        id="displayColorClose"
                       >
                         Fermer
                       </p>
@@ -226,7 +69,8 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     className="cursor-pointer hover:font-bold"
-                    onClick={displayModalEclat}
+                    id="displayEclat"
+                    onClick={() => displayModal(displayEclat, setDisplayEclat)}
                   >
                     L'éclat
                   </button>
@@ -259,8 +103,11 @@ const Home = () => {
                           d'éclat
                         </li>
                         <p
-                          onClick={displayModalEclat}
+                          onClick={() =>
+                            displayModal(displayEclat, setDisplayEclat)
+                          }
                           className="hover:font-bold cursor-pointer mt-2"
+                          id="displayEclatClose"
                         >
                           Fermer
                         </p>
@@ -270,7 +117,10 @@ const Home = () => {
                 </li>
                 <li className="mb-3">
                   <button
-                    onClick={displayModalOpacity}
+                    onClick={() =>
+                      displayModal(displayOpacity, setDisplayOpacity)
+                    }
+                    id="displyOpacity"
                     className="cursor-pointer hover:font-bold"
                   >
                     Opacité ou Transparence
@@ -282,8 +132,11 @@ const Home = () => {
                         est transparent, translucide ou opaque.
                       </span>
                       <p
-                        onClick={displayModalOpacity}
+                        onClick={() =>
+                          displayModal(displayOpacity, setDisplayOpacity)
+                        }
                         className="hover:font-bold cursor-pointer mt-2"
+                        id="displayOpacityClose"
                       >
                         Fermer
                       </p>
@@ -292,8 +145,11 @@ const Home = () => {
                 </li>
                 <li className="mb-3">
                   <button
-                    onClick={displayModalDurete}
+                    onClick={() =>
+                      displayModal(displayDurete, setDisplayDurete)
+                    }
                     className="cursor-pointer hover:font-bold"
+                    id="displayDurete"
                   >
                     La dureté:
                   </button>
@@ -305,8 +161,11 @@ const Home = () => {
                         l'échelle de Mohs.
                       </span>
                       <p
-                        onClick={displayModalDurete}
+                        onClick={() =>
+                          displayModal(displayDurete, setDisplayDurete)
+                        }
                         className="hover:font-bold cursor-pointer mt-2"
+                        id="displayDureteClose"
                       >
                         Fermer
                       </p>
@@ -315,8 +174,11 @@ const Home = () => {
                 </li>
                 <li className="mb-3">
                   <button
-                    onClick={displayModalDensity}
+                    onClick={() =>
+                      displayModal(displayDensity, setDisplayDensity)
+                    }
                     className="hover:font-bold cursor-pointer"
+                    id="displayDensity"
                   >
                     La Densité spécifique
                   </button>
@@ -327,8 +189,11 @@ const Home = () => {
                         sont poid par son volume. Elle s'exprime en g/cm3.
                       </span>
                       <p
-                        onClick={displayModalDensity}
+                        onClick={() =>
+                          displayModal(displayDensity, setDisplayDensity)
+                        }
                         className="hover:font-bold cursor-pointer mt-2"
+                        id="displyDensityClose"
                       >
                         Fermer
                       </p>
@@ -337,8 +202,11 @@ const Home = () => {
                 </li>
                 <li className="mb-3">
                   <button
-                    onClick={displayModalHabitus}
+                    onClick={() =>
+                      displayModal(displayHabitus, setDisplayHabitus)
+                    }
                     className="hover:font-bold cursor-pointer"
+                    id="displayHabitus"
                   >
                     Habitus et Forme
                   </button>
@@ -378,7 +246,9 @@ const Home = () => {
                         </li>
                         <li className="mb-1">Bacillaire: en forme de bâton</li>
                         <p
-                          onClick={displayModalHabitus}
+                          onClick={() =>
+                            displayModal(displayHabitus, setDisplayHabitus)
+                          }
                           className="cursor-pointer hover:font-bold mt-3"
                         >
                           Fermer
@@ -389,12 +259,14 @@ const Home = () => {
                 </li>
                 <li className="mb-3">
                   <button
-                    onClick={displayModalSystem}
+                    onClick={() =>
+                      displayModal(displaySystem, setDisplaySystem)
+                    }
                     className="hover:font-bold cursor-pointer"
                   >
                     Sytème Cristallin
                   </button>
-                  {displaySytem && (
+                  {displaySystem && (
                     <div className="border p-4 absolute bg-gray-400 rounded-xl top-1/3 right-1/4 w-1/2">
                       <span>
                         La cristallographie décrit la forme et la smétrie des
@@ -409,7 +281,9 @@ const Home = () => {
                         spécialisées.
                       </span>
                       <p
-                        onClick={displayModalSystem}
+                        onClick={() =>
+                          displayModal(displaySystem, setDisplaySystem)
+                        }
                         className="cursor-pointer hover:font-bold mt-3"
                       >
                         Fermer
@@ -419,7 +293,12 @@ const Home = () => {
                 </li>
                 <li>
                   <button
-                    onClick={displayModalClassification}
+                    onClick={() =>
+                      displayModal(
+                        displayClassification,
+                        setDisplayClassification
+                      )
+                    }
                     className="hover:font-bold cursor-pointer"
                   >
                     Classification
@@ -432,7 +311,12 @@ const Home = () => {
                         sulfates.
                       </span>
                       <p
-                        onClick={displayModalClassification}
+                        onClick={() =>
+                          displayModal(
+                            displayClassification,
+                            setDisplayClassification
+                          )
+                        }
                         className="cursor-pointer hover:font-bold mt-3"
                       >
                         Fermer
@@ -484,7 +368,7 @@ const Home = () => {
         </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,30 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext, useState } from "react";
-import "../css/Index.css";
-import { Link } from "react-router-dom";
-import image from "../images/Bandeau_de_presentation.jpg";
-import AuthContext from "../context/authContext";
-import { useHistory } from "react-router-dom";
-import "../css/header.css";
-import AuthForm from "../auth/AuthForm";
+import React, { useContext, useState } from 'react'
+import '../css/Index.css'
+import { Link, useLocation } from 'react-router-dom'
+import image from '../images/Bandeau_de_presentation.jpg'
+import AuthContext from '../context/authContext'
+import { useHistory } from 'react-router-dom'
+import '../css/header.css'
+import AuthForm from '../auth/AuthForm'
 
 const Header = () => {
-  const [openConnect, setOpenConnect] = useState(false);
+  const [openConnect, setOpenConnect] = useState(false)
 
-  const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext)
 
-  const isLoggedIn = authContext.isLoggedIn;
+  const isLoggedIn = authContext.isLoggedIn
 
-  const history = useHistory();
+  const history = useHistory()
+
+  //Permet de retourner la page ou nous sommes
+  let location = useLocation()
 
   function handleClick() {
-    authContext.logout();
-    history.push("/");
+    authContext.logout()
+    history.push('/')
   }
 
   const openConnectHandler = () => {
-    setOpenConnect((open) => !open);
-  };
+    setOpenConnect((open) => !open)
+  }
 
   return (
     <div>
@@ -33,7 +36,7 @@ const Header = () => {
           src={image}
           alt="bandeau de présentation"
           className="image_presentation"
-        /> 
+        />
         <div className="flex flex-col justify-center text-center absolute m-auto top-10 left-[850px]">
           <p className="text-5xl font-bold underline text-white">GéoSite</p>
           <p className="text-3x2 text-white">La référence dans la géologie</p>
@@ -45,9 +48,12 @@ const Header = () => {
                 <a href="#">Menu</a>
                 {!isLoggedIn && (
                   <ul className="sous">
-                    <li>
-                      <Link to="/">Page d'accueil</Link>
-                    </li>
+                    {/*location.pathname permet d'indiquer la page en cours, si page d'acceuil on n'affiche pas le lien*/}
+                    {location.pathname !== '/' && (
+                      <li>
+                        <Link to="/">Page d'accueil</Link>
+                      </li>
+                    )}
                     <li>
                       <a
                         href="#"
@@ -97,7 +103,7 @@ const Header = () => {
         {openConnect && <AuthForm closeModal={openConnectHandler} />}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

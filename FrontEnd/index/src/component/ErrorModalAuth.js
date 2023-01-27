@@ -1,6 +1,7 @@
 import React from "react";
 
 const ErrorModalAuth = ({ closeWindow, close }) => {
+  
   return (
     <div>
       {close && (

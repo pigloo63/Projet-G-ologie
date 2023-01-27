@@ -1,68 +1,63 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from 'react'
 
 const CreateAccount = () => {
-  const mailInputRef = useRef();
-  const identifiantInputRef = useRef();
-  const pwdInputref = useRef();
-  const verifyPwdRef = useRef();
+  const mailInputRef = useRef()
+  const identifiantInputRef = useRef()
+  const pwdInputref = useRef()
+  const verifyPwdRef = useRef()
 
   // eslint-disable-next-line no-unused-vars
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
   const signupLogger = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const enterredMail = mailInputRef.current.value;
-    const enteredIdentifiant = identifiantInputRef.current.value;
-    const enterredPwd = pwdInputref.current.value;
-    const enterredPwDVerify = verifyPwdRef.current.value;
+    const enterredMail = mailInputRef.current.value
+    const enteredIdentifiant = identifiantInputRef.current.value
+    const enterredPwd = pwdInputref.current.value
+    const enterredPwDVerify = verifyPwdRef.current.value
 
-    const url = "http://localhost:4000/api/auth/signup";
+    const url = 'http://localhost:4000/api/auth/signup'
 
     const fetchSignUp = async () => {
       try {
         //Vérification de la bonne validité du mpd
         if (enterredPwd !== enterredPwDVerify) {
-          console.log("Mot de passe incorrecte");
-          return;
+          console.log('Mot de passe incorrecte')
+          return
         } else {
           const result = await fetch(url, {
-            method: "POST",
+            method: 'POST',
             body: JSON.stringify({
               email: enterredMail,
               identifiant: enteredIdentifiant,
               password: enterredPwd,
             }),
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
-          });
+          })
 
-          const dataResult = await result.json();
+          const dataResult = await result.json()
 
           if (result.ok) {
-            setData(dataResult.result);
+            setData(dataResult.result)
           }
         }
       } catch (error) {
-        console.log("Pas de réponse de l'API");
+        console.log("Pas de réponse de l'API")
       }
-    };
-    fetchSignUp();
-  };
+    }
+    fetchSignUp()
+  }
 
   return (
     <div>
       <section>
-        <Link to="/">
-          {" "}
-          <span className="cursor-pointer hover:font-bold absolute top-0 right-20 mt-10">
-            {" "}
-            Page d'accueil
-          </span>
-        </Link>
-        <form onSubmit={signupLogger}>
+        <form
+          onSubmit={signupLogger}
+          className="flex flex-col w-1/2 m-auto text-center"
+        >
           <label htmlFor="mail">Votre email</label>
           <input
             type="text"
@@ -95,11 +90,16 @@ const CreateAccount = () => {
             ref={verifyPwdRef}
             required
           />
-          <button type={"submit"}>Créer son compte</button>
+          <button
+            type={'submit'}
+            className="mt-5 hover:font-bold cursor-pointer"
+          >
+            Créer son compte
+          </button>
         </form>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default CreateAccount;
+export default CreateAccount

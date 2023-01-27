@@ -12,6 +12,4 @@ router.get('/', mineralController.getAllMineral)
 
 router.get('/:OneFamily', mineralController.getFamilyMineral)
 
-
 module.exports = router
-

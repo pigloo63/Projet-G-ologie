@@ -12,9 +12,26 @@ const Home = () => {
   const [displaySystem, setDisplaySystem] = useState(false)
   const [displayClassification, setDisplayClassification] = useState(false)
 
-  function displayModal(display, setDisplay) {
+  function displayModal(
+    display,
+    setDisplay,
+    setDisplayFalse1,
+    setDisplayFalse2,
+    setDisplayFalse3,
+    setDisplayFalse4,
+    setDisplayFalse5,
+    setDisplayFalse6,
+    setDisplayFalse7
+  ) {
     if (display === false) {
       setDisplay(true)
+      setDisplayFalse1(false)
+      setDisplayFalse2(false)
+      setDisplayFalse3(false)
+      setDisplayFalse4(false)
+      setDisplayFalse5(false)
+      setDisplayFalse6(false)
+      setDisplayFalse7(false)
     } else {
       setDisplay((open) => !open)
     }
@@ -41,7 +58,19 @@ const Home = () => {
               <ul className="list-disc list-inside mt-5 ml-6">
                 <li className="mb-3">
                   <button
-                    onClick={() => displayModal(displayColor, setDisplayColor)}
+                    onClick={() =>
+                      displayModal(
+                        displayColor,
+                        setDisplayColor,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
+                    }
                     className="cursor-pointer hover:font-bold"
                     id="displayColor"
                   >
@@ -56,7 +85,17 @@ const Home = () => {
                       </span>
                       <p
                         onClick={() =>
-                          displayModal(displayColor, setDisplayColor)
+                          displayModal(
+                            displayColor,
+                            setDisplayColor,
+                            setDisplayClassification,
+                            setDisplayDensity,
+                            setDisplayDurete,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayOpacity,
+                            setDisplaySystem
+                          )
                         }
                         className="cursor-pointer hover:font-bold mt-2"
                         id="displayColorClose"
@@ -70,7 +109,19 @@ const Home = () => {
                   <button
                     className="cursor-pointer hover:font-bold"
                     id="displayEclat"
-                    onClick={() => displayModal(displayEclat, setDisplayEclat)}
+                    onClick={() =>
+                      displayModal(
+                        displayEclat,
+                        setDisplayEclat,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayColor,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
+                    }
                   >
                     L'éclat
                   </button>
@@ -104,7 +155,17 @@ const Home = () => {
                         </li>
                         <p
                           onClick={() =>
-                            displayModal(displayEclat, setDisplayEclat)
+                            displayModal(
+                              displayEclat,
+                              setDisplayEclat,
+                              setDisplayClassification,
+                              setDisplayDensity,
+                              setDisplayDurete,
+                              setDisplayColor,
+                              setDisplayHabitus,
+                              setDisplayOpacity,
+                              setDisplaySystem
+                            )
                           }
                           className="hover:font-bold cursor-pointer mt-2"
                           id="displayEclatClose"
@@ -118,7 +179,17 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     onClick={() =>
-                      displayModal(displayOpacity, setDisplayOpacity)
+                      displayModal(
+                        displayOpacity,
+                        setDisplayColor,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
                     }
                     id="displyOpacity"
                     className="cursor-pointer hover:font-bold"
@@ -133,7 +204,17 @@ const Home = () => {
                       </span>
                       <p
                         onClick={() =>
-                          displayModal(displayOpacity, setDisplayOpacity)
+                          displayModal(
+                            displayOpacity,
+                            setDisplayOpacity,
+                            setDisplayClassification,
+                            setDisplayDensity,
+                            setDisplayDurete,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayColor,
+                            setDisplaySystem
+                          )
                         }
                         className="hover:font-bold cursor-pointer mt-2"
                         id="displayOpacityClose"
@@ -146,7 +227,17 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     onClick={() =>
-                      displayModal(displayDurete, setDisplayDurete)
+                      displayModal(
+                        displayDurete,
+                        setDisplayDurete,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayColor,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
                     }
                     className="cursor-pointer hover:font-bold"
                     id="displayDurete"
@@ -162,7 +253,17 @@ const Home = () => {
                       </span>
                       <p
                         onClick={() =>
-                          displayModal(displayDurete, setDisplayDurete)
+                          displayModal(
+                            displayDurete,
+                            setDisplayDurete,
+                            setDisplayClassification,
+                            setDisplayDensity,
+                            setDisplayColor,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayOpacity,
+                            setDisplaySystem
+                          )
                         }
                         className="hover:font-bold cursor-pointer mt-2"
                         id="displayDureteClose"
@@ -175,7 +276,17 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     onClick={() =>
-                      displayModal(displayDensity, setDisplayDensity)
+                      displayModal(
+                        displayDensity,
+                        setDisplayDensity,
+                        setDisplayClassification,
+                        setDisplayColor,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
                     }
                     className="hover:font-bold cursor-pointer"
                     id="displayDensity"
@@ -190,7 +301,17 @@ const Home = () => {
                       </span>
                       <p
                         onClick={() =>
-                          displayModal(displayDensity, setDisplayDensity)
+                          displayModal(
+                            displayDensity,
+                            setDisplayDensity,
+                            setDisplayClassification,
+                            setDisplayColor,
+                            setDisplayDurete,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayOpacity,
+                            setDisplaySystem
+                          )
                         }
                         className="hover:font-bold cursor-pointer mt-2"
                         id="displyDensityClose"
@@ -203,7 +324,17 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     onClick={() =>
-                      displayModal(displayHabitus, setDisplayHabitus)
+                      displayModal(
+                        displayHabitus,
+                        setDisplayHabitus,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayColor,
+                        setDisplayOpacity,
+                        setDisplaySystem
+                      )
                     }
                     className="hover:font-bold cursor-pointer"
                     id="displayHabitus"
@@ -247,7 +378,17 @@ const Home = () => {
                         <li className="mb-1">Bacillaire: en forme de bâton</li>
                         <p
                           onClick={() =>
-                            displayModal(displayHabitus, setDisplayHabitus)
+                            displayModal(
+                              displayHabitus,
+                              setDisplayHabitus,
+                              setDisplayClassification,
+                              setDisplayDensity,
+                              setDisplayDurete,
+                              setDisplayEclat,
+                              setDisplayColor,
+                              setDisplayOpacity,
+                              setDisplaySystem
+                            )
                           }
                           className="cursor-pointer hover:font-bold mt-3"
                         >
@@ -260,7 +401,17 @@ const Home = () => {
                 <li className="mb-3">
                   <button
                     onClick={() =>
-                      displayModal(displaySystem, setDisplaySystem)
+                      displayModal(
+                        displaySystem,
+                        setDisplaySystem,
+                        setDisplayClassification,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplayColor
+                      )
                     }
                     className="hover:font-bold cursor-pointer"
                   >
@@ -282,7 +433,17 @@ const Home = () => {
                       </span>
                       <p
                         onClick={() =>
-                          displayModal(displaySystem, setDisplaySystem)
+                          displayModal(
+                            displaySystem,
+                            setDisplaySystem,
+                            setDisplayClassification,
+                            setDisplayDensity,
+                            setDisplayDurete,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayOpacity,
+                            setDisplayColor
+                          )
                         }
                         className="cursor-pointer hover:font-bold mt-3"
                       >
@@ -296,7 +457,14 @@ const Home = () => {
                     onClick={() =>
                       displayModal(
                         displayClassification,
-                        setDisplayClassification
+                        setDisplayClassification,
+                        setDisplayColor,
+                        setDisplayDensity,
+                        setDisplayDurete,
+                        setDisplayEclat,
+                        setDisplayHabitus,
+                        setDisplayOpacity,
+                        setDisplaySystem
                       )
                     }
                     className="hover:font-bold cursor-pointer"
@@ -314,7 +482,14 @@ const Home = () => {
                         onClick={() =>
                           displayModal(
                             displayClassification,
-                            setDisplayClassification
+                            setDisplayClassification,
+                            setDisplayColor,
+                            setDisplayDensity,
+                            setDisplayDurete,
+                            setDisplayEclat,
+                            setDisplayHabitus,
+                            setDisplayOpacity,
+                            setDisplaySystem
                           )
                         }
                         className="cursor-pointer hover:font-bold mt-3"

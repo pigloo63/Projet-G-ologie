@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react'
 import '../css/Index.css'
 import { Link, useLocation } from 'react-router-dom'
-import image from '../images/Bandeau_de_presentation.jpg'
+// import image from '../images/Bandeau_de_presentation.jpg'
 import AuthContext from '../context/authContext'
 import { useHistory } from 'react-router-dom'
 import '../css/header.css'
@@ -31,16 +31,6 @@ const Header = () => {
 
   return (
     <div>
-      <div className="mx-auto mb-10">
-        <img
-          src={image}
-          alt="bandeau de présentation"
-          className="image_presentation"
-        />
-        <div className="flex flex-col justify-center text-center absolute m-auto top-10 left-[850px]">
-          <p className="text-5xl font-bold underline text-white">GéoSite</p>
-          <p className="text-3x2 text-white">La référence dans la géologie</p>
-        </div>
         <div className="absolute top-10 left-10 flex flex-col">
           <nav>
             <ul>
@@ -101,7 +91,6 @@ const Header = () => {
           </nav>
         </div>
         {openConnect && <AuthForm closeModal={openConnectHandler} />}
-      </div>
     </div>
   )
 }

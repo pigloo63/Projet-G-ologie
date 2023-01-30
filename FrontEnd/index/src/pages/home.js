@@ -3,50 +3,106 @@ import { Link } from 'react-router-dom'
 import '../css/Index.css'
 
 const Home = () => {
-  const [displayHabitus, setDisplayHabitus] = useState(false)
-  const [displayEclat, setDisplayEclat] = useState(false)
-  const [displayColor, setDisplayColor] = useState(false)
-  const [displayDurete, setDisplayDurete] = useState(false)
-  const [displayOpacity, setDisplayOpacity] = useState(false)
-  const [displayDensity, setDisplayDensity] = useState(false)
-  const [displaySystem, setDisplaySystem] = useState(false)
-  const [displayClassification, setDisplayClassification] = useState(false)
+  // const [displayHabitus, setDisplayHabitus] = useState(false)
+  // const [displayEclat, setDisplayEclat] = useState(false)
+  // const [displayColor, setDisplayColor] = useState(false)
+  // const [displayDurete, setDisplayDurete] = useState(false)
+  // const [displayOpacity, setDisplayOpacity] = useState(false)
+  // const [displayDensity, setDisplayDensity] = useState(false)
+  // const [displaySystem, setDisplaySystem] = useState(false)
+  // const [displayClassification, setDisplayClassification] = useState(false)
 
-  function displayModal(
-    display,
-    setDisplay,
-    setDisplayFalse1,
-    setDisplayFalse2,
-    setDisplayFalse3,
-    setDisplayFalse4,
-    setDisplayFalse5,
-    setDisplayFalse6,
-    setDisplayFalse7
-  ) {
-    if (display === false) {
-      setDisplay(true)
-      setDisplayFalse1(false)
-      setDisplayFalse2(false)
-      setDisplayFalse3(false)
-      setDisplayFalse4(false)
-      setDisplayFalse5(false)
-      setDisplayFalse6(false)
-      setDisplayFalse7(false)
-    } else {
-      setDisplay((open) => !open)
-    }
-  }
+  // function displayModal(
+  //   display,
+  //   setDisplay,
+  //   setDisplayFalse1,
+  //   setDisplayFalse2,
+  //   setDisplayFalse3,
+  //   setDisplayFalse4,
+  //   setDisplayFalse5,
+  //   setDisplayFalse6,
+  //   setDisplayFalse7
+  // ) {
+  //   if (display === false) {
+  //     setDisplay(true)
+  //     setDisplayFalse1(false)
+  //     setDisplayFalse2(false)
+  //     setDisplayFalse3(false)
+  //     setDisplayFalse4(false)
+  //     setDisplayFalse5(false)
+  //     setDisplayFalse6(false)
+  //     setDisplayFalse7(false)
+  //   } else {
+  //     setDisplay((open) => !open)
+  //   }
+  // }
 
   return (
-    <div className="ml-[200px]">
-      <div className="flex w-auto">
+    <div className="">
+      <section className="flex min-h-[80vh] items-center justify-center bg-fixed text-center bg-center bg-cover parallax-config">
+        GEOSITE
+      </section>
+      <section className="w-full min-h-[40vh] bg-buffer">
+        <span>
+          Ce site aura pour objectifs de représenter et d'identifier la plupart
+          des minéraux qu'il est susceptible de rencontrer dans la nature.
+        </span>
+      </section>
+      <section className="flex min-h-[100vh] items-center justify-center bg-fixed bg-center bg-cover parallax-config2">
+        <h3 className='bg-white absolute top-[125vh]'>FAMILLES DE MINERAUX</h3>
+        <div className='flex flex-wrap w-[150vh] justify-around'>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10 mb-[8vh]">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Element Natifs</p> 
+              <div className="img-natifs bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Sulfures</p> 
+              <div className="img-sulfure bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Halogénures</p> 
+              <div className="img-halogenure bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Carbonates</p> 
+              <div className="img-carbonate bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Oxydes et hydroxydes</p> 
+              <div className="img-oxyde bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-2'>Phosphates</p> 
+              <div className="img-phosphate bg-center bg-cover min-h-[20vh] w-[25vh] m-auto rounded-3xl"></div>
+            </Link>
+          </div>
+          <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
+            <Link to="/natifs" className='m-auto min-w-full min-h-[10vh] hover:font-bold'>
+              <p className='flex justify-start ml-5 mb-1'>Silicates et composés organiques</p> 
+              <div className="img-silicate bg-center bg-cover min-h-[20vh]"></div>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="w-full min-h-[30vh] bg-buffer"></section>
+      {/* <div
+        className="flex w-full fixed top-[400px] border p-6 rounded-3xl mr-10 bg-white
+      h-full"
+      >
         <section className="border p-6 rounded-3xl mr-10 bg-white">
           <article>
             <span>
-              Ce site aura pour objectifs de représenter et d'identifier la
-              plupart des minéraux qu'il est susceptible de rencontrer dans la
-              nature.
-              <br />
               Chaque minéral aurra donc ca propre fiche afin que vous puissiez
               avoir toutes les informations nécessaires en un clin d'oeil.
             </span>
@@ -180,12 +236,12 @@ const Home = () => {
                   <button
                     onClick={() =>
                       displayModal(
-                        displayOpacity,
-                        setDisplayColor,
+                        displayEclat,
+                        setDisplayEclat,
                         setDisplayClassification,
                         setDisplayDensity,
                         setDisplayDurete,
-                        setDisplayEclat,
+                        setDisplayColor,
                         setDisplayHabitus,
                         setDisplayOpacity,
                         setDisplaySystem
@@ -503,45 +559,7 @@ const Home = () => {
             </div>
           </article>
         </section>
-        <section className="border h-60 rounded-3xl p-3 w-80 bg-white">
-          <span>Familles de Minéraux</span>
-          <ul className="list-decimal list-inside mt-1 ml-5">
-            <Link to="/Natifs">
-              <li className="hover:font-bold cursor-pointer mb-1">
-                Elément Natifs
-              </li>
-            </Link>
-            <Link to="/Sulfures">
-              <li className="hover:font-bold cursor-pointer mb-1">
-                Sulfures et sulfosels
-              </li>
-            </Link>
-            <Link to="/Halogenures">
-              <li className="hover:font-bold cursor-pointer mb-1">
-                Halogénures et oxydes
-              </li>
-            </Link>
-            <Link to="/Carbonates">
-              <li className="hover:font-bold cursor-pointer mb-1">
-                Carbonates et borates
-              </li>
-            </Link>
-            <Link to="/Sulfates">
-              <li className="hover:font-bold cursor-pointer mb-1">Sulfates</li>
-            </Link>
-            <Link to="/Phosphates">
-              <li className="hover:font-bold cursor-pointer mb-1">
-                Phosphates
-              </li>
-            </Link>
-            <Link to="/Silicates">
-              <li className="hover:font-bold cursor-pointer">
-                Silicates et composé Organiques
-              </li>
-            </Link>
-          </ul>
-        </section>
-      </div>
+      </div> */}
     </div>
   )
 }

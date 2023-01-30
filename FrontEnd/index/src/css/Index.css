@@ -6,12 +6,47 @@
 body{
     margin:auto;
     scroll-behavior: auto;
-    background-color: #dfe1e7;
+    /* background-color: #dfe1e7; */
 }
 
-.image_presentation{
+.parallax-config{
+    background-image: url('../images/canyon-gc68bd4159_1280.jpg');
+}
+.parallax-config2{
+    background-image: url('../images/crystal-gaffffb578_1920.jpg');
+}
+
+.img-natifs{
+    background-image: url('../images//depositphotos_2849702-stock-photo-native-copper.png');
+}
+
+.img-sulfure{
+    background-image: url('../images//quartz-avec-des-sulfures-sur-un-fond-blanc-69195930.jpg');
+}
+
+.img-halogenure{
+    background-image: url('../images/depositphotos_170738452-stock-photo-partially-polished-rainbow-fluorite-with.png');
+}
+
+.img-carbonate{
+    background-image: url('../images/depositphotos_44065701-stock-photo-malachite-and-azurite-minerals.png');
+}
+
+.img-oxyde{
+    background-image: url('../images/chalcedony-gf8b72d013_1280.jpg');
+}
+
+.img-phosphate{
+    background-image: url('../images/istockphoto-179245354-612x612.jpg');
+}
+
+.img-silicate{
+    background-image: url('../images/depositphotos_24267087-stock-photo-natural-pyrope-garnet-minerals-gems.png');
+}
+
+/* .image_presentation{
     height: 400px;
     width: 100%;
     margin: auto;
     object-fit: cover;
-}
+} */

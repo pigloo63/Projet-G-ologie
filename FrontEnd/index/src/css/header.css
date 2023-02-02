@@ -20,22 +20,22 @@ nav ul li{
     width:200%;
     text-align: center;
     position: relative;
+    color: white;
 }
 
 
 nav a {
     display: block;
     text-decoration: none;
-    color: black;
     border-bottom: 2px solid transparent;
     padding: 10px 0px;
-    color: white;
+    color: black;
 }
 
-nav a:hover{
+/* nav a:hover{
     color: orange;
     border-bottom: 2px solid gold;
-}
+} */
 
 .deroulant > a:after{
     content:'▼';
@@ -58,6 +58,10 @@ nav > ul li:hover .sous{
     float: none;
     width: 100%;
     text-align: left;
+}
+
+.sous li a{
+    color: white;
 }
 
 .sous a{

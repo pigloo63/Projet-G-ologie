@@ -10,13 +10,19 @@ import Phosphates from "./pages/Family/Phosphates";
 import Silicates from "./pages/Family/Silicates";
 import AddMineral from "./pages/addMineral";
 import CreateAccount from "./auth/CreateAccount";
+import AuthForm from "./auth/AuthForm";
 
 function App() {
+
+  
   return (
     <>
       <Router>
         <Header />
         <Switch>
+          <Route path="/auth">
+            <AuthForm />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>

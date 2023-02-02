@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     colors: {
       white: colors.white,
+      red: colors.red,
       'buffer': 'rgb(63 63 63)'
     },
     extend: {

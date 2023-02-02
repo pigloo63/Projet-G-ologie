@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import '../css/Index.css'
 import { Link, useLocation } from 'react-router-dom'
 // import image from '../images/Bandeau_de_presentation.jpg'
@@ -7,6 +7,7 @@ import AuthContext from '../context/authContext'
 import { useHistory } from 'react-router-dom'
 import '../css/header.css'
 import AuthForm from '../auth/AuthForm'
+
 
 const Header = () => {
   const [openConnect, setOpenConnect] = useState(false)
@@ -25,17 +26,26 @@ const Header = () => {
     history.push('/')
   }
 
-  const openConnectHandler = () => {
-    setOpenConnect((open) => !open)
-  }
+  const [scroll, setScroll] = useState(0)
+
+  useEffect(() => {
+    const scrollTop = () => {
+      setScroll(window.scrollY)
+    }
+    window.addEventListener('scroll', scrollTop)
+
+  }, [])
+
+
 
   return (
     <div>
-        <div className="absolute top-10 left-10 flex flex-col">
+      {(scroll <= 700) && <div className='bg-white w-full h-[7vh] fixed border-b-[5px]'>
+        <div className="fixed top-4 left-10">
           <nav>
             <ul>
               <li className="deroulant">
-                <a href="#">Menu</a>
+                <a href="#" className=''>Menu</a>
                 {!isLoggedIn && (
                   <ul className="sous">
                     {/*location.pathname permet d'indiquer la page en cours, si page d'acceuil on n'affiche pas le lien*/}
@@ -45,13 +55,7 @@ const Header = () => {
                       </li>
                     )}
                     <li>
-                      <a
-                        href="#"
-                        onClick={openConnectHandler}
-                        className="hover:font-bold"
-                      >
-                        Se connecter
-                      </a>
+                      <Link to='/auth'> Se connecter</Link>
                     </li>
                     <li>
                       <Link
@@ -90,7 +94,8 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        {openConnect && <AuthForm closeModal={openConnectHandler} />}
+      </div>}
+        {/* {openConnect && <AuthForm/>} */}
     </div>
   )
 }

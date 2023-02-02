@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 
 body{
     margin:auto;
     scroll-behavior: auto;
-    /* background-color: #dfe1e7; */
+    font-family: 'Lobster', sans-serif;
 }
 
 .parallax-config{
@@ -44,9 +46,16 @@ body{
     background-image: url('../images/depositphotos_24267087-stock-photo-natural-pyrope-garnet-minerals-gems.png');
 }
 
-/* .image_presentation{
-    height: 400px;
-    width: 100%;
-    margin: auto;
-    object-fit: cover;
-} */
+.first-title{
+    text-shadow: 0px 0px 30px rgb(165, 234, 255);;
+}
+
+.title-shaping{
+    font-size: 25px;
+    text-shadow: 0px 0px 15px rgb(165, 234, 255);
+    font-weight: bold;
+    position: absolute;
+    top: 125%;
+    left: 45%;
+    color: rgb(10, 10, 10);
+}

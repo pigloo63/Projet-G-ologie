@@ -1,14 +1,16 @@
 import React, { useRef, useState, useContext } from 'react'
 import AuthContext from '../context/authContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { Link, useHistory } from 'react-router-dom'
 
-const AuthForm = ({ closeModal }) => {
+const AuthForm = () => {
   const identifiantInputRef = useRef()
   const pwdInputRef = useRef()
 
   const authContext = useContext(AuthContext)
+
+  const history = useHistory()
 
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState()
@@ -50,15 +52,13 @@ const AuthForm = ({ closeModal }) => {
         } else {
           setData(dataResult.result)
           setClose(false)
+          history.push('/')
           authContext.login(dataResult.token, dataResult.userId)
         }
 
         identifiantInputRef.current.value = ''
         pwdInputRef.current.value = ''
 
-        if (result.ok) {
-          closeModal()
-        }
       } catch (error) {
         console.log("Pas de réponse de l'API")
       }
@@ -68,15 +68,15 @@ const AuthForm = ({ closeModal }) => {
 
   return (
     <div>
-      <div>
+      <section className='parallax-config min-h-[100vh] bg-cover w-[45%]'>
         {close && (
-          <section className="fixed top-1/4 right-1/2 translate-x-1/2 border bg-slate-300 rounded-3xl m-auto p-10 w-[400px]">
-            <FontAwesomeIcon
+          <section className="m-auto fixed top-1/3 left-[60%] w-[25%]">
+            {/* <FontAwesomeIcon
               onClick={closeModal}
               icon={faXmark}
               className="cursor-pointer mb-5"
               size="lg"
-            />
+            /> */}
             <p className="text-center">CONNECTEZ-VOUS</p>
             <form
               onSubmit={submitHandler}
@@ -86,7 +86,7 @@ const AuthForm = ({ closeModal }) => {
                 Votre identifiant
               </label>
               <input
-                className="mb-10"
+                className="mb-10 border"
                 type="text"
                 name="identifiant"
                 id="identifiant"
@@ -97,7 +97,7 @@ const AuthForm = ({ closeModal }) => {
                 Mot de passe
               </label>
               <input
-                className="mb-10"
+                className="mb-10 border"
                 type="password"
                 name="password"
                 id="password"
@@ -115,7 +115,6 @@ const AuthForm = ({ closeModal }) => {
               <p className="mr-2">Nouvelle utilisateur ? </p>
               <Link
                 to="/createAccount"
-                onClick={closeModal}
                 className="hover:font-bold"
               >
                 Je crée mon compte
@@ -123,7 +122,7 @@ const AuthForm = ({ closeModal }) => {
             </div>
           </section>
         )}
-      </div>
+      </section>
     </div>
   )
 }

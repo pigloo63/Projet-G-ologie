@@ -17,7 +17,7 @@ const MineralField = ({ elementMineral }) => {
                 <span>{elementMineral.description}</span>
                 <h2 className="mt-3 font-bold">Couleur:</h2>
                 <span>{elementMineral.color}</span>
-                <h2 className="mt-3 font-bold">Eclat:</h2>
+                <h2 className="mt-3 font-bold">Eclat:</h2>  
                 <span>{elementMineral.eclat}</span>
               </div>
               <div className="ml-80">

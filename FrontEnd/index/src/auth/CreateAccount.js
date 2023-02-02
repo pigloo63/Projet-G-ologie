@@ -53,13 +53,14 @@ const CreateAccount = () => {
 
   return (
     <div>
-      <section>
+      <section className='parallax-config bg-cover min-h-[100vh] w-[45%]'>
         <form
           onSubmit={signupLogger}
-          className="flex flex-col w-1/2 m-auto text-center"
+          className="flex flex-col w-1/2 text-center fixed top-1/3 left-[45%]"
         >
           <label htmlFor="mail">Votre email</label>
           <input
+            className='border w-[50vh] m-auto mb-5'
             type="text"
             name="mail"
             id="mail"
@@ -68,6 +69,7 @@ const CreateAccount = () => {
           />
           <label htmlFor="identifiant">Votre identifiant</label>
           <input
+            className='border w-[50vh] m-auto mb-5'
             type="text"
             name="identifiant"
             id="identifiant"
@@ -76,6 +78,7 @@ const CreateAccount = () => {
           />
           <label htmlFor="password">Votre mot de passe</label>
           <input
+            className='border w-[50vh] m-auto mb-5'
             type="password"
             name="password"
             id="password"
@@ -84,6 +87,7 @@ const CreateAccount = () => {
           />
           <label htmlFor="verifyPassword">Vérification du mot de passe</label>
           <input
+            className='border w-[50vh] m-auto mb-10'
             type="password"
             name="verifyPassword"
             id="verifyPassword"

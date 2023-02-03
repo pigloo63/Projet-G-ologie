@@ -2,15 +2,12 @@
 import React, { useContext, useState, useEffect } from 'react'
 import '../css/Index.css'
 import { Link, useLocation } from 'react-router-dom'
-// import image from '../images/Bandeau_de_presentation.jpg'
 import AuthContext from '../context/authContext'
 import { useHistory } from 'react-router-dom'
 import '../css/header.css'
-import AuthForm from '../auth/AuthForm'
 
 
 const Header = () => {
-  const [openConnect, setOpenConnect] = useState(false)
 
   const authContext = useContext(AuthContext)
 
@@ -92,10 +89,14 @@ const Header = () => {
                 )}
               </li>
             </ul>
-            <ul className='ml-[200px]'>
+            <ul className='ml-[200px] w-[10vh]'>
               <li className='deroulant'>
                 <a href="#">Définitions</a>
-                <Link></Link>
+                <ul className='sous'>
+                  <li>
+                    <Link to='/definition'>Propriétés Minéralogiques</Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </nav>

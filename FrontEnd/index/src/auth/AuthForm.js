@@ -1,7 +1,5 @@
 import React, { useRef, useState, useContext } from 'react'
 import AuthContext from '../context/authContext'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { Link, useHistory } from 'react-router-dom'
 
 const AuthForm = () => {
@@ -58,7 +56,6 @@ const AuthForm = () => {
 
         identifiantInputRef.current.value = ''
         pwdInputRef.current.value = ''
-
       } catch (error) {
         console.log("Pas de réponse de l'API")
       }
@@ -68,16 +65,10 @@ const AuthForm = () => {
 
   return (
     <div>
-      <section className='parallax-config h-[95vh] bg-cover w-[45%]'>
+      <section className="parallax-config h-[95vh] bg-cover w-[45%]">
         {close && (
           <div className="m-auto fixed top-1/3 left-[60%] w-[25%]">
-            {/* <FontAwesomeIcon
-              onClick={closeModal}
-              icon={faXmark}
-              className="cursor-pointer mb-5"
-              size="lg"
-            /> */}
-            <p className="text-center text-2xl mt-[-10vh]">CONNECTEZ-VOUS</p>
+            <h2 className="text-center text-2xl mt-[-10vh]">CONNECTEZ-VOUS</h2>
             <form
               onSubmit={submitHandler}
               className="flex flex-col mt-[10vh] text-center"
@@ -113,10 +104,7 @@ const AuthForm = () => {
             </form>
             <div className="mt-10 flex">
               <p className="mr-2">Nouvelle utilisateur ? </p>
-              <Link
-                to="/createAccount"
-                className="hover:font-bold"
-              >
+              <Link to="/createAccount" className="hover:font-bold">
                 Je crée mon compte
               </Link>
             </div>

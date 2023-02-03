@@ -11,6 +11,7 @@ import Silicates from "./pages/Family/Silicates";
 import AddMineral from "./pages/addMineral";
 import CreateAccount from "./auth/CreateAccount";
 import AuthForm from "./auth/AuthForm";
+import Definitions from "./pages/definitions";
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/definition">
+            <Definitions />
           </Route>
           <Route path="/createAccount">
             <CreateAccount />

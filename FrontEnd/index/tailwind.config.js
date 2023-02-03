@@ -7,7 +7,8 @@ module.exports = {
     colors: {
       white: colors.white,
       red: colors.red,
-      'buffer': 'rgb(63 63 63)'
+      'buffer': 'rgb(63 63 63)',
+      'neutral' : 'rgb(212 212 212)'
     },
     extend: {
       backgroundImage: {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/Index.css'
@@ -71,7 +72,7 @@ const Home = () => {
               to="/Natifs"
               className="m-auto min-w-full min-h-[10vh] hover:font-bold"
             >
-              <p className="justify-start mb-1">Element Natifs</p>
+              <p className="justify-start mb-1">Elements Natifs</p>
               <div className="img-natifs bg-center bg-cover min-h-[20vh]"></div>
             </Link>
           </div>
@@ -133,9 +134,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="w-full min-h-[10vh] bg-buffer">
-
-      </section>
+      <section className="w-full min-h-[10vh] bg-buffer"></section>
       {/* <div
         className="flex w-full fixed top-[400px] border p-6 rounded-3xl mr-10 bg-white
       h-full"

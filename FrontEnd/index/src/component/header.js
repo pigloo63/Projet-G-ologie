@@ -40,12 +40,12 @@ const Header = () => {
 
   return (
     <div>
-      {(scroll <= 700) && <div className='bg-white w-full h-[7vh] fixed border-b-[5px]'>
+      {(scroll <= 700) && <div className='w-full h-[7vh] fixed border-b-[5px] bg-neutral'>
         <div className="fixed top-4 left-10">
-          <nav>
-            <ul>
+          <nav className='flex'>
+            <ul className='w-[10vh]'>
               <li className="deroulant">
-                <a href="#" className=''>Menu</a>
+                <a href="#">Menu</a>
                 {!isLoggedIn && (
                   <ul className="sous">
                     {/*location.pathname permet d'indiquer la page en cours, si page d'acceuil on n'affiche pas le lien*/}
@@ -90,6 +90,12 @@ const Header = () => {
                     </li>
                   </ul>
                 )}
+              </li>
+            </ul>
+            <ul className='ml-[200px]'>
+              <li className='deroulant'>
+                <a href="#">Définitions</a>
+                <Link></Link>
               </li>
             </ul>
           </nav>

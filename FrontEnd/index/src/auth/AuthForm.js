@@ -68,19 +68,19 @@ const AuthForm = () => {
 
   return (
     <div>
-      <section className='parallax-config min-h-[100vh] bg-cover w-[45%]'>
+      <section className='parallax-config h-[95vh] bg-cover w-[45%]'>
         {close && (
-          <section className="m-auto fixed top-1/3 left-[60%] w-[25%]">
+          <div className="m-auto fixed top-1/3 left-[60%] w-[25%]">
             {/* <FontAwesomeIcon
               onClick={closeModal}
               icon={faXmark}
               className="cursor-pointer mb-5"
               size="lg"
             /> */}
-            <p className="text-center">CONNECTEZ-VOUS</p>
+            <p className="text-center text-2xl mt-[-10vh]">CONNECTEZ-VOUS</p>
             <form
               onSubmit={submitHandler}
-              className="flex flex-col mt-10 text-center"
+              className="flex flex-col mt-[10vh] text-center"
             >
               <label htmlFor="identifiant" className="mb-5">
                 Votre identifiant
@@ -111,7 +111,7 @@ const AuthForm = () => {
               )}
               <button type={'submit'}>Se connecter</button>
             </form>
-            <div className="mt-5 flex">
+            <div className="mt-10 flex">
               <p className="mr-2">Nouvelle utilisateur ? </p>
               <Link
                 to="/createAccount"
@@ -120,9 +120,10 @@ const AuthForm = () => {
                 Je crée mon compte
               </Link>
             </div>
-          </section>
+          </div>
         )}
       </section>
+      <section className="w-full h-[5vh] bg-buffer"></section>
     </div>
   )
 }

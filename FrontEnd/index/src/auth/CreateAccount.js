@@ -53,7 +53,8 @@ const CreateAccount = () => {
 
   return (
     <div>
-      <section className='parallax-config bg-cover min-h-[100vh] w-[45%]'>
+      <section className='parallax-config bg-cover min-h-[95vh] w-[45%]'>
+        <p className='absolute top-[20vh] left-[131vh] text-2xl'>INSCRIVEZ-VOUS</p>
         <form
           onSubmit={signupLogger}
           className="flex flex-col w-1/2 text-center fixed top-1/3 left-[45%]"
@@ -102,6 +103,7 @@ const CreateAccount = () => {
           </button>
         </form>
       </section>
+      <section className="w-full min-h-[5vh] bg-buffer"></section>
     </div>
   )
 }

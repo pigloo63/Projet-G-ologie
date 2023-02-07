@@ -1,10 +1,12 @@
-import React, { useRef, useState, useContext } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState, useContext } from 'react'
 import AuthContext from '../context/authContext'
 import { Link, useHistory } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 const AuthForm = () => {
-  const identifiantInputRef = useRef()
-  const pwdInputRef = useRef()
+  const { register, handleSubmit} = useForm()
+
 
   const authContext = useContext(AuthContext)
 
@@ -17,33 +19,29 @@ const AuthForm = () => {
   //Fonction et useState permettant d'afficher lors d'une erreur de mot de passe la modale
   // eslint-disable-next-line no-unused-vars
   const [close, setClose] = useState(true)
-  console.log(close)
 
   //Fonction pour envoyer les éléments au back
-  const submitHandler = (e) => {
+  const onSubmit = (data, e) => {
     e.preventDefault()
 
-    const enteredidentifiant = identifiantInputRef.current.value
-    const enteredPwd = pwdInputRef.current.value
+    const username = data.username
+    const password = data.password
 
     const url = 'http://localhost:4000/api/auth/login'
-
     const fetchlog = async () => {
       try {
         const result = await fetch(url, {
           method: 'POST',
           body: JSON.stringify({
-            identifiant: enteredidentifiant,
-            password: enteredPwd,
+            identifiant: username,
+            password: password,
           }),
           headers: {
             'Content-Type': 'application/json',
           },
         })
-
         const dataResult = await result.json()
         console.log(dataResult)
-
         //Si erreur du mot de passe alors affichage de la modale
         if (dataResult.valid === false) {
           setError(true)
@@ -53,9 +51,6 @@ const AuthForm = () => {
           history.push('/')
           authContext.login(dataResult.token, dataResult.userId)
         }
-
-        identifiantInputRef.current.value = ''
-        pwdInputRef.current.value = ''
       } catch (error) {
         console.log("Pas de réponse de l'API")
       }
@@ -70,19 +65,20 @@ const AuthForm = () => {
           <div className="m-auto fixed top-1/3 left-[60%] w-[25%]">
             <h2 className="text-center text-2xl mt-[-10vh]">CONNECTEZ-VOUS</h2>
             <form
-              onSubmit={submitHandler}
+              onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col mt-[10vh] text-center"
             >
-              <label htmlFor="identifiant" className="mb-5">
+              <label htmlFor="username" className="mb-5">
                 Votre identifiant
               </label>
               <input
                 className="mb-10 border"
                 type="text"
-                name="identifiant"
-                id="identifiant"
-                ref={identifiantInputRef}
-                required
+                name="username"
+                id="username"
+                {...register('username', {
+                  required: 'Adresse identifiant est incorrect',
+                })}
               />
               <label htmlFor="password" className="mb-5">
                 Mot de passe
@@ -92,15 +88,16 @@ const AuthForm = () => {
                 type="password"
                 name="password"
                 id="password"
-                ref={pwdInputRef}
-                required
+                {...register('password', {
+                  required: 'Mot de passe incorrect',
+                })}
               />
-              {error && (
+              {
                 <div className="mb-5">
                   <p>Le mot de passe et/ou l'identifiant sont incorecte</p>
                 </div>
-              )}
-              <button type={'submit'}>Se connecter</button>
+              }
+              {<button type={'submit'}>Se connecter</button>}
             </form>
             <div className="mt-10 flex">
               <p className="mr-2">Nouvelle utilisateur ? </p>

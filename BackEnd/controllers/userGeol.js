@@ -8,14 +8,12 @@ exports.signup = (req, res) => {
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
-      const user = new UserModel(
-        req.body.email,
-        hash,
-        req.body.identifiant,
-        req.body.verifyPassword
-      )
+      const verifyPassWord = req.body.verifyPassWord
+      console.log(verifyPassWord)
+      const user = new UserModel(req.body.email, hash, req.body.identifiant)
+      console.log(user)
       //Vérification de la bonne écriture du mot de passe
-      if (req.body.password !== req.body.verifyPassword) {
+      if (req.body.password !== verifyPassWord) {
         res
           .status(403)
           .json({ message: 'La vérification du mot de passe est incorrecte' })

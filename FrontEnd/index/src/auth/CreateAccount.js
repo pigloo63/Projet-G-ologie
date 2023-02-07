@@ -1,37 +1,35 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 const CreateAccount = () => {
-  const mailInputRef = useRef()
-  const identifiantInputRef = useRef()
-  const pwdInputref = useRef()
-  const verifyPwdRef = useRef()
-
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState([])
 
-  const signupLogger = (e) => {
-    e.preventDefault()
+  const { register, handleSubmit } = useForm()
 
-    const enterredMail = mailInputRef.current.value
-    const enteredIdentifiant = identifiantInputRef.current.value
-    const enterredPwd = pwdInputref.current.value
-    const enterredPwDVerify = verifyPwdRef.current.value
+  const signupLogger = (data) => {
+    console.log(data)
+
+    const mail = data.email
+    const username = data.username
+    const password = data.password
+    const verifyPassWord = data.verifyPassword
 
     const url = 'http://localhost:4000/api/auth/signup'
 
     const fetchSignUp = async () => {
       try {
         //Vérification de la bonne validité du mpd
-        if (enterredPwd !== enterredPwDVerify) {
+        if (password !== verifyPassWord) {
           console.log('Mot de passe incorrecte')
-          return
         } else {
           const result = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({
-              email: enterredMail,
-              identifiant: enteredIdentifiant,
-              password: enterredPwd,
+              email: mail,
+              identifiant: username,
+              password: password,
+              verifyPassWord: verifyPassWord,
             }),
             headers: {
               'Content-Type': 'application/json',
@@ -58,26 +56,28 @@ const CreateAccount = () => {
           INSCRIVEZ-VOUS
         </h2>
         <form
-          onSubmit={signupLogger}
-          className="flex flex-col w-1/2 text-center fixed top-1/3 left-[45%]"
+          onSubmit={handleSubmit(signupLogger)}
+          className="flex flex-col w-1/3 text-center fixed top-1/3 left-[45%]"
         >
           <label htmlFor="mail">Votre email</label>
           <input
             className="border w-[50vh] m-auto mb-5"
             type="text"
-            name="mail"
-            id="mail"
-            ref={mailInputRef}
-            required
+            name="email"
+            id="email"
+            {...register('email', {
+              required: 'Email est incorrect',
+            })}
           />
-          <label htmlFor="identifiant">Votre identifiant</label>
+          <label htmlFor="username">Votre identifiant</label>
           <input
             className="border w-[50vh] m-auto mb-5"
             type="text"
-            name="identifiant"
-            id="identifiant"
-            ref={identifiantInputRef}
-            required
+            name="username"
+            id="username"
+            {...register('username', {
+              required: "L'identifiant est requis",
+            })}
           />
           <label htmlFor="password">Votre mot de passe</label>
           <input
@@ -85,8 +85,9 @@ const CreateAccount = () => {
             type="password"
             name="password"
             id="password"
-            ref={pwdInputref}
-            required
+            {...register('password', {
+              required: 'Adresse identifiant est incorrect',
+            })}
           />
           <label htmlFor="verifyPassword">Vérification du mot de passe</label>
           <input
@@ -94,8 +95,9 @@ const CreateAccount = () => {
             type="password"
             name="verifyPassword"
             id="verifyPassword"
-            ref={verifyPwdRef}
-            required
+            {...register('verifyPassword', {
+              required: 'Vérification du mot de passe est incorrect',
+            })}
           />
           <button
             type={'submit'}

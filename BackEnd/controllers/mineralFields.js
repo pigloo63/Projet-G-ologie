@@ -3,23 +3,9 @@ const mysqlconnection = require('../DB/mysql')
 const { default: mineralFieldModel } = require('../models/mineralFieldModel')
 
 exports.createMineral = (req, res) => {
-  console.log(req)
-
-  const imgMic = !req.files
-    ? null
-    : `${req.protocol}://${req.get('host')}/images/${
-        req.files.imgMic[0].filename
-      }`
-
-  const imgMineral = `${req.protocol}://${req.get('host')}/images/${
-    req.files.imgMineral[0].filename
+  const image = `${req.protocol}://${req.get('host')}/images/${
+    req.file.filename
   }`
-
-  const imgDiagram = !req.files
-    ? null
-    : `${req.protocol}://${req.get('host')}/images/${
-        req.files.imgDiagram[0].filename
-      }`
 
   const mineralSave = new mineralFieldModel(
     req.body.family,
@@ -33,9 +19,7 @@ exports.createMineral = (req, res) => {
     req.body.opacity,
     req.body.density,
     req.body.habitus,
-    imgMineral,
-    imgMic,
-    imgDiagram
+    image
   )
 
   mysqlconnection.query(

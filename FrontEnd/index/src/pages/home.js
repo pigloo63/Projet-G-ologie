@@ -4,32 +4,29 @@ import { Link } from 'react-router-dom'
 import '../css/Index.css'
 
 const Home = () => {
-  
   return (
     <div className="">
       <section className="flex min-h-[80vh] items-center justify-center bg-fixed text-center bg-center bg-cover parallax-config">
-        <h1 className='text-6xl first-title'>
-          GEOSITE
-        </h1>
+        <h1 className="text-6xl first-title">GEOSITE</h1>
       </section>
       <section className="w-full min-h-[40vh] bg-buffer">
-        <div className='text-white font-bold w-1/2 m-auto pt-[1/2] text-2xl'>
-          <p className='pt-[10vh]'>
-            Ce site aura pour objectifs de représenter et d'identifier la plupart
-            des minéraux qu'il est susceptible de rencontrer dans la nature. Pour chaque minéral une fiche de présentation
-            vous sera fournie avec toute leur propriété et photographie.
-            <p className='mt-5'>
-              En dessous vous trouverez toutes les grandes familles de classifications, qui vous permettrons d'accéder directement au minéraux
-              associés à cette famille.
-            </p>
+        <div className="text-white font-bold w-1/2 m-auto pt-[1/2] text-2xl">
+          <p className="pt-[10vh]">
+            Ce site aura pour objectifs de représenter et d'identifier la
+            plupart des minéraux qu'il est susceptible de rencontrer dans la
+            nature. Pour chaque minéral une fiche de présentation vous sera
+            fournie avec toute leur propriété et photographie.
+          </p>
+          <p className="mt-5">
+            En dessous vous trouverez toutes les grandes familles de
+            classifications, qui vous permettrons d'accéder directement au
+            minéraux associés à cette famille.
           </p>
         </div>
       </section>
       <section className="flex min-h-[100vh] items-center justify-center bg-fixed bg-center bg-cover parallax-config2">
         <div className="title-shaping">
-          <h3>
-            FAMILLES DE MINERAUX
-          </h3>
+          <h3>FAMILLES DE MINERAUX</h3>
         </div>
         <div className="flex flex-wrap w-[150vh] justify-around">
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10 mb-[8vh]">

@@ -1,7 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import FamilyLink from '../component/FamilyLink'
 import '../css/Index.css'
+import imgNatifs from '../images/depositphotos_2849702-stock-photo-native-copper.png'
+import imgSulfures from '../images/quartz-avec-des-sulfures-sur-un-fond-blanc-69195930.jpg'
+import imgHalogénures from '../images/depositphotos_170738452-stock-photo-partially-polished-rainbow-fluorite-with.png'
+import imgCarbonates from '../images/depositphotos_44065701-stock-photo-malachite-and-azurite-minerals.png'
+import imgSulfates from '../images/chalcedony-gf8b72d013_1280.jpg'
+import imgPhosphates from '../images/istockphoto-179245354-612x612.jpg'
+import imgSilicates from '../images/depositphotos_24267087-stock-photo-natural-pyrope-garnet-minerals-gems.png'
 
 const Home = () => {
   return (
@@ -30,69 +38,53 @@ const Home = () => {
         </div>
         <div className="flex flex-wrap w-[150vh] justify-around">
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10 mb-[8vh]">
-            <Link
-              to="/Natifs"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">Elements Natifs</p>
-              <div className="img-natifs bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Elements natifs'}
+              link={'/natifs'}
+              picture={imgNatifs}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <Link
-              to="/Sulfures"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">Sulfures et sulfosels</p>
-              <div className="img-sulfure bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Sulfures et Sulfosels'}
+              link={'/Sulfures'}
+              picture={imgSulfures}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <Link
-              to="/Halogenures"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">Halogénures et oxydes</p>
-              <div className="img-halogenure bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Halogénures et oxydes'}
+              link={'/Halogenures'}
+              picture={imgHalogénures}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
-            <Link
-              to="/Carbonates"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">Carbonates et borates</p>
-              <div className="img-carbonate bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Carbonates et borates'}
+              link={'/Carbonates'}
+              picture={imgCarbonates}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <Link
-              to="/Sulfates"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">Sulfates</p>
-              <div className="img-oxyde bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Sulfates'}
+              link={'/Sulfates'}
+              picture={imgSulfates}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <Link
-              to="/Phosphates"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-2">Phosphates</p>
-              <div className="img-phosphate bg-center bg-cover min-h-[20vh] w-[25vh] m-auto rounded-3xl"></div>
-            </Link>
+            <FamilyLink
+              family={'Phosphates'}
+              link={'/Phosphates'}
+              picture={imgPhosphates}
+            />
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
-            <Link
-              to="/Silicates"
-              className="m-auto min-w-full min-h-[10vh] hover:font-bold"
-            >
-              <p className="justify-start mb-1">
-                Silicates et composés organiques
-              </p>
-              <div className="img-silicate bg-center bg-cover min-h-[20vh]"></div>
-            </Link>
+            <FamilyLink
+              family={'Silicates et composés organiques'}
+              link={'/Silicates'}
+              picture={imgSilicates}
+            />
           </div>
         </div>
       </section>

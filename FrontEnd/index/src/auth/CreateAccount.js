@@ -57,7 +57,7 @@ const CreateAccount = () => {
         </h2>
         <form
           onSubmit={handleSubmit(signupLogger)}
-          className="flex flex-col w-1/3 text-center fixed top-1/3 left-[45%]"
+          className="flex flex-col w-1/3 text-center fixed top-1/3 left-[53%]"
         >
           <label htmlFor="mail">Votre email</label>
           <input

@@ -30,15 +30,15 @@ const Sulfures = () => {
   return (
     <>
       <div>
-        <section className="parallax-config min-h-[35vh] bg-cover bg-fixed bg-center">
+        <section className="parallax-config min-h-[40vh] bg-cover bg-fixed bg-center">
           <div className="w-full">
-            <p className="text-6xl first-title absolute top-[15vh] left-[72vh]">
+            <p className="text-6xl first-title absolute top-[21vh] left-[72vh]">
               SULFURES ET SULFOSELS
             </p>
           </div>
         </section>
         <div className="border rounded-3xl p-4 w-40 mt-5">
-          <span className="mb-10 font-bold">Les minéraux:</span>
+          <span className="mb-10">Les minéraux:</span>
           <ListOfMinerals data={dataSulfures} />
         </div>
       </div>

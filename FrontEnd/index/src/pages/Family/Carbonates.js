@@ -31,14 +31,14 @@ const Carbonates = () => {
   return (
     <>
       <div>
-        <section className="parallax-config min-h-[35vh] bg-cover bg-fixed bg-center">
+        <section className="parallax-config min-h-[40vh] bg-cover bg-fixed bg-center">
           <div className="w-full">
-            <p className="text-6xl first-title absolute top-[15vh] left-[80vh]">
+            <p className="text-6xl first-title absolute top-[20vh] left-[80vh]">
               CARBONATES
             </p>
           </div>
         </section>
-        <div className="border rounded-3xl p-4 w-40  bg-white">
+        <div className="border rounded-3xl p-4 w-40 mt-5">
           <span className="mb-10">Les minéraux:</span>
           <ListOfMinerals data={dataCarbonates} />
         </div>

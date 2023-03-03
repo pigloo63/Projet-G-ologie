@@ -30,9 +30,9 @@ const Phosphates = () => {
   return (
     <>
       <div>
-        <section className="parallax-config min-h-[30vh] bg-cover bg-fixed bg-center">
+        <section className="parallax-config min-h-[40vh] bg-cover bg-fixed bg-center">
           <div className="w-full">
-            <p className="text-6xl first-title absolute top-[15vh] left-[85vh]">
+            <p className="text-6xl first-title absolute top-[21vh] left-[85vh]">
               PHOSPHATES
             </p>
           </div>

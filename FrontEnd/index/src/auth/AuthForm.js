@@ -6,8 +6,7 @@ import { useForm } from 'react-hook-form'
 
 const AuthForm = () => {
   const { register, handleSubmit} = useForm()
-
-
+  
   const authContext = useContext(AuthContext)
 
   const history = useHistory()

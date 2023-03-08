@@ -62,3 +62,16 @@ exports.getFamilyMineral = (req, res) => {
     }
   )
 }
+
+exports.getOneMineralInFamily = (req, res) => {
+  mysqlconnection.query(
+    `SELECT * FROM mineralproperty WHERE family = "${req.params.OneFamily}" AND name = "${req.params.mineral}"`,
+    (err, result) => {
+      if (err) {
+        res.json({ err: 'mineral non trouvé' })
+      } else {
+        res.status(200).json({ result })
+      }
+    }
+  )
+}

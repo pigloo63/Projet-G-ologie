@@ -97,36 +97,55 @@ const Header = () => {
                   </ul>
                 </li>
               </ul>
-              <ul className="ml-[200px] w-[20vh] absolute left-[130vh]">
-                <li className="deroulant">
-                  <a href="#">Famille de minéraux</a>
-                  <ul className="sous">
-                    {location.pathname !== '/natifs' && <li>
-                      <Link to="/natifs">Elements natifs</Link>
-                    </li>}
-                    {location.pathname !== '/sulfures' && <li>
-                      <Link to="/sulfures">Sulfures et sulfosels</Link>
-                    </li>}
-                    {location.pathname !== '/halogenures' && <li>
-                      <Link to="/halogenures">Halogénures et oxydes</Link>
-                    </li>}
-                    {location.pathname !== '/carbonates' && <li>
-                      <Link to="/carbonates">Carbonates et borates</Link>
-                    </li>}
-                    {location.pathname !== '/sulfates' && <li>
-                      <Link to="/sulfates">Sulfates</Link>
-                    </li>}
-                    {location.pathname !== '/phosphates' && <li>
-                      <Link to="/phosphates">Phosphates</Link>
-                    </li>}
-                    {location.pathname !== '/silicates' && <li>
-                      <Link to="/silicates">
-                        Silicates et composés organiques
-                      </Link>
-                    </li>}
+              {location.pathname !== '/' &&
+                location.pathname !== '/createAcount' &&
+                location.pathname !== '/auth' &&
+                location.pathname !== '/addMineral' && (
+                  <ul className="ml-[200px] w-[20vh] absolute left-[130vh]">
+                    <li className="deroulant">
+                      <a href="#">Famille de minéraux</a>
+                      <ul className="sous">
+                        {location.pathname !== '/natifs' && (
+                          <li>
+                            <Link to="/natifs">Elements natifs</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/sulfures' && (
+                          <li>
+                            <Link to="/sulfures">Sulfures et sulfosels</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/halogenures' && (
+                          <li>
+                            <Link to="/halogenures">Halogénures et oxydes</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/carbonates' && (
+                          <li>
+                            <Link to="/carbonates">Carbonates et borates</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/sulfates' && (
+                          <li>
+                            <Link to="/sulfates">Sulfates</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/phosphates' && (
+                          <li>
+                            <Link to="/phosphates">Phosphates</Link>
+                          </li>
+                        )}
+                        {location.pathname !== '/silicates' && (
+                          <li>
+                            <Link to="/silicates">
+                              Silicates et composés organiques
+                            </Link>
+                          </li>
+                        )}
+                      </ul>
+                    </li>
                   </ul>
-                </li>
-              </ul>
+                )}
             </nav>
           </div>
         </div>

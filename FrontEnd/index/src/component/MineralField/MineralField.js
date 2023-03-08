@@ -5,7 +5,7 @@ const MineralField = ({ elementMineral }) => {
   return (
     <div>
       {elementMineral && (
-        <div className="p-5 w-auto absolute top-[35vh] left-[200px]">
+        <div className="p-5 w-auto absolute top-[40vh] left-[200px]">
           <div className="flex">
             <div className="flex">
               <div className="h-2">

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import FamilyLink from '../component/FamilyLink'
 import '../css/Index.css'
 import imgNatifs from '../images/depositphotos_2849702-stock-photo-native-copper.png'

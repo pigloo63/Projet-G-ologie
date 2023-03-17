@@ -6,6 +6,7 @@ import CreateAccount from './auth/CreateAccount'
 import AuthForm from './auth/AuthForm'
 import Definitions from './pages/definitions'
 import FamilyPages from './pages/Family/FamilyPages'
+import SearchMineral from './pages/SearchMineral'
 
 function App() {
   return (
@@ -25,11 +26,14 @@ function App() {
           <Route path="/createAccount">
             <CreateAccount />
           </Route>
-          <Route path="/:family">
-            <FamilyPages />
-          </Route>
           <Route path="/addMineral">
             <AddMineral />
+          </Route>
+          <Route path="/searchMineral">
+            <SearchMineral />
+          </Route>
+          <Route path="/:family">
+            <FamilyPages />
           </Route>
         </Switch>
       </Router>

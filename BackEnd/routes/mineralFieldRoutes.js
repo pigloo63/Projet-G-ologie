@@ -12,6 +12,10 @@ router.get('/', mineralController.getAllMineral)
 
 router.get('/:OneFamily', mineralController.getFamilyMineral)
 
-router.post('/:OneFamily/:mineral', mineralController.getOneMineralInFamily)
+router.get('/find/:NameOfMineral', mineralController.findOneMineral)
+
+router.get('/find/name/:FamilyMineral', mineralController.findNameOfMineralsInFamily)
+
+ router.get('/:OneFamily/:mineral', mineralController.getOneMineralInFamily)
 
 module.exports = router

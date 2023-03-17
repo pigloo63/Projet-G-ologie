@@ -1,7 +1,7 @@
 import React from 'react'
 import MineralField from '../../component/MineralField/MineralField'
 
-const ListOfMinerals = ({ data, selectMineral, element }) => {
+const ListOfMinerals = ({ data, selectMineral, element, family }) => {
   return (
     <>
       <div className="flex">
@@ -20,7 +20,7 @@ const ListOfMinerals = ({ data, selectMineral, element }) => {
           ))}
         </div>
         <div>
-          <MineralField elementMineral={element} />
+          <MineralField elementMineral={element} family={family} />
         </div>
       </div>
     </>

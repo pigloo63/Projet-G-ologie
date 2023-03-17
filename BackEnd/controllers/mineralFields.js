@@ -55,7 +55,34 @@ exports.getFamilyMineral = (req, res) => {
     `SELECT * FROM mineralproperty WHERE family = "${req.params.OneFamily}"`,
     (err, result) => {
       if (err) {
-        res.json({ err })
+        res.json({ err: '' })
+      } else {
+        res.status(200).json({ result })
+      }
+    }
+  )
+}
+
+exports.findNameOfMineralsInFamily = (req, res) => {
+  // if(req.params.FamilyMineral)
+  mysqlconnection.query(
+    `SELECT name FROM mineralproperty WHERE family = "${req.params.FamilyMineral}" GROUP BY name`,
+    (err, result) => {
+      if (err) {
+        res.json({ err: 'minéraux non trouvé' })
+      } else {
+        res.status(200).json({ result })
+      }
+    }
+  )
+}
+
+exports.findOneMineral = (req, res) => {
+  mysqlconnection.query(
+    `SELECT * FROM mineralproperty WHERE name = "${req.params.NameOfMineral}"`,
+    (err, result) => {
+      if (err) {
+        res.json({ err: 'mineral non trouvé' })
       } else {
         res.status(200).json({ result })
       }

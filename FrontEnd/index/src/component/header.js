@@ -97,8 +97,15 @@ const Header = () => {
                   </ul>
                 </li>
               </ul>
+              {isLoggedIn && (
+                <ul className="ml-[200px] w-[10vh]">
+                  <li>
+                    <Link to="/searchMineral">Recherche</Link>
+                  </li>
+                </ul>
+              )}
               {location.pathname !== '/' &&
-                location.pathname !== '/createAcount' &&
+                location.pathname !== '/createAccount' &&
                 location.pathname !== '/auth' &&
                 location.pathname !== '/addMineral' && (
                   <ul className="ml-[200px] w-[20vh] absolute left-[130vh]">

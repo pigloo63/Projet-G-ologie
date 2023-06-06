@@ -78,4 +78,8 @@ exports.login = (req, res) => {
   )
 }
 
+exports.changeUserCharacter = (req, res) => {
+  //Vérication qur l'utilisatuer est bien celui de connecté
+}
+
 exports.findUser = (req, res) => {}

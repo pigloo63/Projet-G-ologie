@@ -76,6 +76,11 @@ const Header = () => {
                         </Link>
                       </li>
                       <li>
+                        <Link to='/userPage'>
+                          Vos informations
+                        </Link>
+                      </li>
+                      <li>
                         <a
                           onClick={handleClick}
                           className="cursor-pointer hover:font-bold"

@@ -107,7 +107,7 @@ const CreateAccount = () => {
           </button>
         </form>
       </section>
-      <section className="w-full min-h-[5vh] bg-buffer"></section>
+      <section className="w-full min-h-[5vh] bg-buffer"/>
     </div>
   )
 }

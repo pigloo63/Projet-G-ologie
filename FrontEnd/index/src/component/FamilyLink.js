@@ -2,7 +2,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
 const FamilyLink = ({ link, family, picture }) => {
   return (
     <>
@@ -10,7 +9,7 @@ const FamilyLink = ({ link, family, picture }) => {
         to={link}
         className="m-auto min-w-full min-h-[10vh] hover:font-bold"
       >
-        <p className="justify-start mb-1">{family}</p>
+        <p className="justify-start mb-1 mt-10">{family}</p>
         <div>
           <img
             src={picture}

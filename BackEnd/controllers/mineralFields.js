@@ -66,7 +66,7 @@ exports.getFamilyMineral = (req, res) => {
 exports.findNameOfMineralsInFamily = (req, res) => {
   // if(req.params.FamilyMineral)
   mysqlconnection.query(
-    `SELECT name FROM mineralproperty WHERE family = "${req.params.FamilyMineral}" GROUP BY name`,
+    `SELECT * FROM mineralproperty WHERE family = "${req.params.FamilyMineral}" GROUP BY name`,
     (err, result) => {
       if (err) {
         res.json({ err: 'minéraux non trouvé' })

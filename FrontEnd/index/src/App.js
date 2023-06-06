@@ -7,6 +7,7 @@ import AuthForm from './auth/AuthForm'
 import Definitions from './pages/definitions'
 import FamilyPages from './pages/Family/FamilyPages'
 import SearchMineral from './pages/SearchMineral'
+import UserPages from './component/UserPages'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/userPage">
+            <UserPages />
           </Route>
           <Route path="/definition">
             <Definitions />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import SearchResultFamily from '../component/SearchResult'
 
 const SearchBar = () => {
   const { register, handleSubmit } = useForm()
@@ -7,15 +8,11 @@ const SearchBar = () => {
   const [searchResultFind, setSearchResultFind] = useState()
   const [family, setFamily] = useState()
 
-  console.log(searchResultFind)
-
   const onSubmit = (data, e) => {
     e.preventDefault()
 
     const searchResult = data.searchResult
-    console.log(searchResult)
     const familyMineral = data.family
-    console.log(familyMineral)
 
     let url = ''
 
@@ -58,49 +55,66 @@ const SearchBar = () => {
           </p>
         </div>
       </section>
-      <section>
-        <div className="flex flex-col w-[10%]">
+      <section className="w-[15%] ml-4">
+        <div className="flex flex-col">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="">Nom</label>
-            <input
-              className="border"
-              type="search"
-              name="searchBar"
-              id="searchBar"
-              {...register(
-                'searchResult' //, {
-                //   required: true,
-                // }
-              )}
-            />
-            <label htmlFor="family">Famille du minérale</label>
-            <select
-              value={family}
-              onChange={(e) => setFamily(e.target.value)}
-              name="family"
-              id="family"
-              {...register('family', {
-                required: 'Champs requis',
-              })}
-            >
-              <option value="vide"></option>
-              <option value="natifs">Eléments natifs</option>
-              <option value="sulfures">Sulfures et sulfosels</option>
-              <option value="halogénures">Halogénures et oxydes</option>
-              <option value="carbonates">Carbonates et borates</option>
-              <option value="sulfates">Sulfates</option>
-              <option value="natifs">Eléments Natifs</option>
-              <option value="phosphates">Phosphates</option>
-              <option value="silicates">Silicates et composé organiques</option>
-            </select>
+            <div className="flex flex-col mb-5">
+              <label htmlFor="">Nom</label>
+              <input
+                className="border"
+                type="search"
+                name="searchBar"
+                id="searchBar"
+                {...register(
+                  'searchResult' //, {
+                  //   required: true,
+                  // }
+                )}
+              />
+            </div>
+            <div className="mb-5">
+              <label htmlFor="">Famille du minérale</label>
+              <select
+                className="mt-2"
+                value={family}
+                onChange={(e) => setFamily(e.target.value)}
+                name="family"
+                id="family"
+                {...register('family', {
+                  required: 'Champs requis',
+                })}
+              >
+                <option value="vide"></option>
+                <option value="natifs">Eléments natifs</option>
+                <option value="sulfures">Sulfures et sulfosels</option>
+                <option value="halogénures">Halogénures et oxydes</option>
+                <option value="carbonates">Carbonates et borates</option>
+                <option value="sulfates">Sulfates</option>
+                <option value="natifs">Eléments Natifs</option>
+                <option value="phosphates">Phosphates</option>
+                <option value="silicates">
+                  Silicates et composé organiques
+                </option>
+              </select>
+            </div>
             <button type={'submit'}>Rechercher</button>
           </form>
         </div>
       </section>
-      <section>
+      <section className="relative left-[30em] top-[-9em] w-1/2">
         <div>
           <p>Résutat</p>
-          {<div></div>}
+          <div className="flex justify-around">
+            {searchResultFind &&
+              searchResultFind.map((mineral) => (
+                <SearchResultFamily
+                  name={mineral.name}
+                  image={mineral.image}
+                  familyMineral={family}
+                  minral={searchResultFind}
+                />
+              ))}
+          </div>
         </div>
       </section>
     </>

@@ -10,6 +10,14 @@ import imgSulfates from '../images/chalcedony-gf8b72d013_1280.jpg'
 import imgPhosphates from '../images/istockphoto-179245354-612x612.jpg'
 import imgSilicates from '../images/depositphotos_24267087-stock-photo-natural-pyrope-garnet-minerals-gems.png'
 
+function family(link, family, img) {
+  return (
+    <div>
+      <FamilyLink family={family} link={link} picture={img} />
+    </div>
+  )
+}
+
 const Home = () => {
   return (
     <div className="">
@@ -37,53 +45,29 @@ const Home = () => {
         </div>
         <div className="flex flex-wrap w-[150vh] justify-around">
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10 mb-[8vh]">
-            <FamilyLink
-              family={'Elements natifs'}
-              link={'/natifs'}
-              picture={imgNatifs}
-            />
+            {family('/natifs', 'Elements natifs', imgNatifs)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <FamilyLink
-              family={'Sulfures et Sulfosels'}
-              link={'/Sulfures'}
-              picture={imgSulfures}
-            />
+            {family('/Sulfures', 'Sulfures et Sulfosels', imgSulfures)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <FamilyLink
-              family={'Halogénures et oxydes'}
-              link={'/Halogenures'}
-              picture={imgHalogénures}
-            />
+            {family('/Halogenures', 'Halogénures et oxydes', imgHalogénures)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
-            <FamilyLink
-              family={'Carbonates et borates'}
-              link={'/Carbonates'}
-              picture={imgCarbonates}
-            />
+            {family('/Carbonates', 'Carbonates et borates', imgCarbonates)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <FamilyLink
-              family={'Sulfates'}
-              link={'/Sulfates'}
-              picture={imgSulfates}
-            />
+            {family('/Sulfates', 'Sulfates', imgSulfates)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl mr-10">
-            <FamilyLink
-              family={'Phosphates'}
-              link={'/Phosphates'}
-              picture={imgPhosphates}
-            />
+            {family('/Phosphates', 'Phosphates', imgPhosphates)}
           </div>
           <div className="bg-white h-[30vh] min-w-[30vh] flex justify-center text-center rounded-3xl">
-            <FamilyLink
-              family={'Silicates et composés organiques'}
-              link={'/Silicates'}
-              picture={imgSilicates}
-            />
+            {family(
+              '/Silicates',
+              'Silicates et composés organiques',
+              imgSilicates
+            )}
           </div>
         </div>
       </section>
